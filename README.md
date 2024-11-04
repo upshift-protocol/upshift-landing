@@ -76,11 +76,7 @@ Open http://localhost:3000 in your browser to start working on the UpShift app.
 │   ├── hooks                   # Hooks used throughout the app
 │   ├── pages                   # Next JS pages
 │   ├── styles                  # All CSS files
-│   ├── ui                      # Atomically-designed UI components
-│   │   ├── atoms               # Smallest component, like a button
-│   │   ├── molecules           # Made up of atoms to build organisms
-│   │   ├── organisms           # Larger, fully-functional component made up of atoms and molecules
-│   │   └── skeletons           # Templates, layouts, and core components like a header
+│   ├── components              # UI components
 │   └── utils                   # Utility folder
 │       ├── constants           # Various constant variables denoted in uppercase
 │       ├── helpers             # Various helper methods
