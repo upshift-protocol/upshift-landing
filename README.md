@@ -1,30 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Upshift Landing Page
+
+Upshift pools generate yields from institutional loans on the August protocol using the [August SDK](https://www.npmjs.com/package/@augustdigital/sdk).
+
+## Table of Contents
+
+- [Getting Started](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#getting-started)
+  - [Requirements](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#requirements)
+  - [Environment Variables](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#environment-variables)
+  - [Installation](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#installation)
+  - [Development](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#development)
+- [Directory](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#directory)
+- [Deployment](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#deployment)
+  - [Live Links](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#live)
+- [Contributions](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#contributions)
+- [License](https://github.com/lazarev-protocol/upshift-app?tab=readme-ov-file#license)
 
 ## Getting Started
 
-First, run the development server:
+This frontend features:
+
+- [Typescript as the core language](https://www.typescriptlang.org/)
+- [NextJS to enable SSR](https://nextjs.org/)
+- [TailwindCSS to assist in styling](https://tailwindcss.com/)
+- [Material UI to provide a component library](https://mui.com/)
+- [Prettier to keep code clean](https://prettier.io/)
+- [ESLint to ensure code builds](https://eslint.org/)
+- [Husky to automate git interactions](https://typicode.github.io/husky/)
+
+### Requirements
+
+- [Node.js v18+](https://nodejs.org/)
+- [PNPM](https://pnpm.io/)
+
+### Environment Variables
+
+Create a `.env` file to input the following variables:
+
+- `NEXT_PUBLIC_ALCHEMY_API_KEY`: being your infura API key
+- `NEXT_PUBLIC_AUGUST_DIGITAL_API_KEY`: being your august digital API key
+
+or copy and paste the `.env.sample` with your appropriate values
+
+### Installation
+
+Run the following command on your local environment:
+
+```bash
+pnpm install
+```
+
+### Development
+
+Run the local developer server with:
 
 ```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*which injects the environment variable `NEXT_PUBLIC_DEV=1` in order to display logs and render the devtools.*
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000 in your browser to start working on the UpShift app. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+*Note: Next JS requires some additional time to compile the project for your first time.*
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Directory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+.
+├── README.md                   # README file
+├── next.config.js              # Next JS configuration
+...
+├── src
+│   ├── config                  # All configuration files
+│   ├── hooks                   # Hooks used throughout the app
+│   ├── pages                   # Next JS pages
+│   ├── styles                  # All CSS files
+│   ├── ui                      # Atomically-designed UI components
+│   │   ├── atoms               # Smallest component, like a button
+│   │   ├── molecules           # Made up of atoms to build organisms
+│   │   ├── organisms           # Larger, fully-functional component made up of atoms and molecules
+│   │   └── skeletons           # Templates, layouts, and core components like a header
+│   └── utils                   # Utility folder
+│       ├── constants           # Various constant variables denoted in uppercase
+│       ├── helpers             # Various helper methods
+│       └── types               # Global typescript interfaces 
+├── ...
+└── tsconfig.json               # TypeScript configuration
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+You can see the results locally in production mode with:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+pnpm build
+pnpm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The generated HTML and CSS files are minified (built-in feature from Next js).
+
+### Live
+
+The site is currently deployed using AWS Amplify on the following links:
+
+- https://upshift.finance (`main`)
+- https://staging.upshift.finance (`develop`)
+
+## Contributions
+
+Everyone is welcome to contribute to the Upshift landing page. Feel free to [open an issue](https://github.com/upshift-protocol/upshift-landing/issues) if you have a proposal or found a bug. PR's should be made to `develop` branch and await approval from team which will go through a QA process before being merged to the production branch, `main`.
+
+## License
+
+Licensed under the MIT License, Copyright © 2024
+
+See [LICENSE](LICENSE) for more information.
