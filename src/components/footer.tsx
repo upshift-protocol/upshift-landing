@@ -6,7 +6,7 @@ import { STYLE_VARS } from '@/utils/constants';
 
 export default function Footer(){
   return (
-  <footer className="mt-4">
+  <footer>
     <Stack
       paddingY={'1rem'}
       paddingX={{ xs: '16px', sm: '24px' }}
