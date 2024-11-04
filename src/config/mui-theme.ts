@@ -1,7 +1,7 @@
 import { red, pink, yellow } from '@mui/material/colors';
 import type { ThemeOptions } from '@mui/material/styles';
 import { createTheme } from '@mui/material/styles';
-import FONTS from '../../../upshift-terms/src/config/fonts';
+import FONTS from './fonts';
 
 const HEADER_FONT_WEIGHT = 900;
 const BORDER_RADIUS = '16rem';
