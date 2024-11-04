@@ -1,6 +1,6 @@
 import FONTS from "@/config/fonts";
 import { LINKS } from "@/utils/constants";
-import { Button, Chip, Container, Skeleton, Typography } from "@mui/material";
+import { Button, Chip, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 

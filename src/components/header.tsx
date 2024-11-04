@@ -9,7 +9,6 @@ import { useThemeMode } from '@/stores/theme';
 import { Button, Drawer, IconButton } from '@mui/material';
 import { useState } from 'react';
 import Grid from '@mui/material/Grid';
-import ThemeSwitch from './theme-toggle';
 import Logo from './logo';
 import Link from 'next/link';
 import SocialLink from './social-link';
