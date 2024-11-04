@@ -1,6 +1,7 @@
 import FONTS from "@/config/fonts";
 import { LINKS } from "@/utils/constants";
 import { Button, Chip, Container, Skeleton, Typography } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -48,10 +49,29 @@ export default function Home() {
             <Typography textTransform={"uppercase"} color="primary"  style={FONTS.dinCondensed.style} fontWeight="400">Backed By</Typography>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 md:gap-2 lg:gap-4 w-full">
-            <Skeleton height="6rem" width="12rem" />
-            <Skeleton height="6rem" width="12rem" />
-            <Skeleton height="6rem" width="12rem" />
-            <Skeleton height="6rem" width="12rem" />
+            <Image 
+              src="/assets/investors/6mv.svg"
+              alt="6th Man Ventures Logo"
+              width={40}
+              height={30}
+            />
+                        <Image 
+              src="/assets/investors/6mv.svg"
+              alt="6th Man Ventures Logo"
+              width={40}
+              height={30}
+            />            <Image 
+            src="/assets/investors/6mv.svg"
+            alt="6th Man Ventures Logo"
+            width={40}
+            height={30}
+          />
+                      <Image 
+              src="/assets/investors/6mv.svg"
+              alt="6th Man Ventures Logo"
+              width={40}
+              height={30}
+            />
           </div>
         </div>
       </div>
