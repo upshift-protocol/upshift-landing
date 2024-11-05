@@ -8,7 +8,9 @@ export default function NotFound() {
         <Logo width={180} height={90} />
         <div className="max-w-md text-center">
           <p>
-          Sorry, but the UpShift Web Application is not available in your country. We apologize for the inconvenience and thank you for your understanding.
+            Sorry, but the UpShift Web Application is not available in your
+            country. We apologize for the inconvenience and thank you for your
+            understanding.
           </p>
         </div>
       </main>

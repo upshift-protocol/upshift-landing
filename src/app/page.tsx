@@ -8,14 +8,14 @@ export default async function Home() {
   const pools = await augustSdk.pools.getPools();
   const tokens: IToken[] = await Promise.all(
     pools?.map(async (p) => {
-          const price = await augustSdk.getPrice(
-            p.underlying?.symbol?.toLowerCase(),
-          );
-          return {
-            ...p.underlying,
-            price,
-          };
-        })
+      const price = await augustSdk.getPrice(
+        p.underlying?.symbol?.toLowerCase(),
+      );
+      return {
+        ...p.underlying,
+        price,
+      };
+    }),
   );
 
   return (

@@ -1,10 +1,10 @@
-import { red, pink, yellow } from '@mui/material/colors';
-import type { ThemeOptions } from '@mui/material/styles';
-import { createTheme } from '@mui/material/styles';
-import FONTS from './fonts';
+import { red, pink, yellow } from "@mui/material/colors";
+import type { ThemeOptions } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
+import FONTS from "./fonts";
 
 const HEADER_FONT_WEIGHT = 900;
-const BORDER_RADIUS = '16rem';
+const BORDER_RADIUS = "16rem";
 
 const baseTheme: ThemeOptions = {
   typography: {
@@ -12,36 +12,36 @@ const baseTheme: ThemeOptions = {
     fontWeightRegular: 800,
     fontSize: 16,
     h1: {
-      fontSize: '48px',
+      fontSize: "48px",
       fontFamily: FONTS.visiaPro.style.fontFamily,
       fontWeight: HEADER_FONT_WEIGHT,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     h2: {
-      fontSize: '36px',
+      fontSize: "36px",
       fontFamily: FONTS.visiaPro.style.fontFamily,
       fontWeight: HEADER_FONT_WEIGHT,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     h3: {
       fontFamily: FONTS.visiaPro.style.fontFamily,
       fontWeight: HEADER_FONT_WEIGHT,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     h4: {
       fontFamily: FONTS.visiaPro.style.fontFamily,
       fontWeight: HEADER_FONT_WEIGHT,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     h5: {
       fontFamily: FONTS.visiaPro.style.fontFamily,
       fontWeight: HEADER_FONT_WEIGHT,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     h6: {
       fontFamily: FONTS.visiaPro.style.fontFamily,
       fontWeight: HEADER_FONT_WEIGHT,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
     },
     body2: {
       fontSize: 18,
@@ -51,7 +51,7 @@ const baseTheme: ThemeOptions = {
     },
     button: {
       fontFamily: FONTS.dinCondensed.style.fontFamily,
-      textTransform: 'uppercase',
+      textTransform: "uppercase",
       fontSize: 17,
       lineHeight: 1.475,
     },
@@ -70,9 +70,9 @@ const baseTheme: ThemeOptions = {
           borderRadius: BORDER_RADIUS,
         },
         contained: {
-          boxShadow: 'none',
-          ':hover': {
-            boxShadow: 'none',
+          boxShadow: "none",
+          ":hover": {
+            boxShadow: "none",
           },
         },
       },
@@ -84,16 +84,16 @@ export const lightTheme = createTheme({
   ...baseTheme,
   palette: {
     primary: {
-      main: '#00c260',
+      main: "#00c260",
     },
     secondary: {
-      main: '#dfe200',
+      main: "#dfe200",
     },
     error: {
       main: red.A200,
     },
     warning: {
-      main: yellow['800'],
+      main: yellow["800"],
     },
   },
   components: {
@@ -110,11 +110,11 @@ export const lightTheme = createTheme({
           borderRadius: BORDER_RADIUS,
         },
         contained: {
-          color: '#fff',
+          color: "#fff",
         },
         outlined: {
-          backdropFilter: 'blur(4px)',
-          background: 'rgba(255, 255, 255, 0.2)',
+          backdropFilter: "blur(4px)",
+          background: "rgba(255, 255, 255, 0.2)",
         },
       },
     },
@@ -124,12 +124,12 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
   ...baseTheme,
   palette: {
-    mode: 'dark',
+    mode: "dark",
     primary: {
-      main: '#00FF7E',
+      main: "#00FF7E",
     },
     secondary: {
-      main: '#FCFF00',
+      main: "#FCFF00",
     },
     error: {
       main: pink[400],
@@ -149,8 +149,8 @@ export const darkTheme = createTheme({
           borderRadius: BORDER_RADIUS,
         },
         outlined: {
-          backdropFilter: 'blur(4px)',
-          background: 'rgba(0, 0, 0, 0.2)',
+          backdropFilter: "blur(4px)",
+          background: "rgba(0, 0, 0, 0.2)",
         },
       },
     },

@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import Toolbar from '@mui/material/Toolbar';
-import { STYLE_VARS } from '@/utils/constants';
-import Logo from './logo';
-import Link from 'next/link';
-import SocialLink from './social-link';
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Toolbar from "@mui/material/Toolbar";
+import { STYLE_VARS } from "@/utils/constants";
+import Logo from "./logo";
+import Link from "next/link";
+import SocialLink from "./social-link";
 
 export default function Header() {
   // const { isDark, toggleTheme } = useThemeMode();
@@ -20,31 +20,31 @@ export default function Header() {
 
   return (
     <header>
-      <Box sx={{ flexGrow: 1, mb: '1rem' }}>
+      <Box sx={{ flexGrow: 1, mb: "1rem" }}>
         <AppBar
           position="static"
-          color={'inherit'}
+          color={"inherit"}
           style={{
-            backgroundColor: 'inherit',
-            backgroundImage: 'none',
+            backgroundColor: "inherit",
+            backgroundImage: "none",
           }}
-          sx={{ boxShadow: 'none', py: '0.25rem' }}
+          sx={{ boxShadow: "none", py: "0.25rem" }}
         >
           <Toolbar
             style={{
               maxWidth: STYLE_VARS.widthWide,
-              margin: '0 auto',
-              width: '100%',
-              justifyContent: 'space-between',
+              margin: "0 auto",
+              width: "100%",
+              justifyContent: "space-between",
             }}
           >
             <Link
               href="/"
               target="_self"
               style={{
-                textDecoration: 'none',
-                color: 'inherit',
-                display: 'flex',
+                textDecoration: "none",
+                color: "inherit",
+                display: "flex",
               }}
             >
               <Logo />
@@ -55,7 +55,7 @@ export default function Header() {
               direction="row"
               alignItems="center"
               gap={{ xs: 1, md: 2 }}
-              display={{ xs: 'flex' }}
+              display={{ xs: "flex" }}
             >
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
               <Stack>
@@ -170,4 +170,4 @@ export default function Header() {
       </Box>
     </header>
   );
-};
+}

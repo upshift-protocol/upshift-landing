@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import type { IChildren, ITheme } from '@/utils/types';
-import React, { createContext, useState, useContext, useEffect } from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
-import { ThemeProvider as MuiProvider } from '@mui/material/styles';
-import * as mui from '@/config/mui-theme';
+import type { IChildren, ITheme } from "@/utils/types";
+import React, { createContext, useState, useContext, useEffect } from "react";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider as MuiProvider } from "@mui/material/styles";
+import * as mui from "@/config/mui-theme";
 
 interface ThemeContextValue {
   theme: ITheme;
@@ -12,25 +12,25 @@ interface ThemeContextValue {
   isDark: boolean;
 }
 
-const LOCAL_KEY = 'theme-color';
+const LOCAL_KEY = "theme-color";
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
 const ThemeProvider = ({ children }: IChildren) => {
-  const [theme, setTheme] = useState<ITheme>('dark');
+  const [theme, setTheme] = useState<ITheme>("dark");
 
   const toggleTheme = () => {
     setTheme((prevTheme: ITheme) => {
-      const other = prevTheme === 'light' ? 'dark' : 'light';
+      const other = prevTheme === "light" ? "dark" : "light";
       localStorage.setItem(LOCAL_KEY, other);
       return other;
     });
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const prefersDark = darkModeQuery.matches ? 'dark' : 'light';
+    if (typeof window !== "undefined") {
+      const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      const prefersDark = darkModeQuery.matches ? "dark" : "light";
       const localStorageTheme = localStorage.getItem(
         LOCAL_KEY,
       ) as ITheme | null;
@@ -39,10 +39,10 @@ const ThemeProvider = ({ children }: IChildren) => {
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('theme-color', theme);
+    localStorage.setItem("theme-color", theme);
   }, [theme]);
 
-  const isDark = theme === 'dark';
+  const isDark = theme === "dark";
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, isDark }}>
@@ -57,7 +57,7 @@ const ThemeProvider = ({ children }: IChildren) => {
 const useThemeMode = (): ThemeContextValue => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
 };

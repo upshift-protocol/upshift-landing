@@ -14,14 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${FONTS.visiaPro.variable} antialiased bg-black`}
-      >
+      <body className={`${FONTS.visiaPro.variable} antialiased bg-black`}>
         <Providers>
           <Header />
-          <main className="min-h-[calc(100vh-88px)]">
-            {children}
-          </main>
+          <main className="min-h-[calc(100vh-88px)]">{children}</main>
           <Footer />
         </Providers>
       </body>
