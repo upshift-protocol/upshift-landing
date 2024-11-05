@@ -59,7 +59,11 @@ export default function Header() {
               display={{ xs: "flex" }}
             >
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
-              <Link href={LINKS.DOCS} target="_blank" className="transition duration-150 hover:opacity-80">
+              <Link
+                href={LINKS.DOCS}
+                target="_blank"
+                className="transition duration-150 hover:opacity-80"
+              >
                 <Typography textTransform={"uppercase"}>Docs</Typography>
               </Link>
               <SocialLink />

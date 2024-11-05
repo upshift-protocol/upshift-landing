@@ -48,26 +48,28 @@ export default function BannerView({
         gap={{ xs: 2, md: 4, lg: 6 }}
       >
         <Stack direction="column" minWidth={"150px"}>
-          <Typography 
-                        textTransform={"uppercase"}
-                        color="primary"
-                        style={FONTS.dinCondensed.style}
-                        fontWeight="400"
-                        fontSize="16px"
-          >Total Deposited</Typography>
+          <Typography
+            textTransform={"uppercase"}
+            color="primary"
+            style={FONTS.dinCondensed.style}
+            fontWeight="400"
+            fontSize="16px"
+          >
+            Total Deposited
+          </Typography>
           <Typography variant="h5">{formatUsd(totalSupplied)}</Typography>
         </Stack>
         <Stack direction="column" minWidth={"150px"}>
-          <Typography 
-                        textTransform={"uppercase"}
-                        color="primary"
-                        style={FONTS.dinCondensed.style}
-                        fontWeight="400"
-                        fontSize="16px"
-            >Total Borrowed</Typography>
-          <Typography variant="h5">
-            {formatUsd(totalBorrow)}
+          <Typography
+            textTransform={"uppercase"}
+            color="primary"
+            style={FONTS.dinCondensed.style}
+            fontWeight="400"
+            fontSize="16px"
+          >
+            Total Borrowed
           </Typography>
+          <Typography variant="h5">{formatUsd(totalBorrow)}</Typography>
         </Stack>
       </Stack>
 

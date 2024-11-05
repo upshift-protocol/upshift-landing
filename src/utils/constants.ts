@@ -18,7 +18,7 @@ export const STYLE_VARS = {
 export const LINKS = {
   X: `https://x.com/upshift_fi`,
   APP: "https://avax.upshift.finance",
-  DOCS: "https://docs.upshift.finance"
+  DOCS: "https://docs.upshift.finance",
 };
 
 // external
