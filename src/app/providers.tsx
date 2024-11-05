@@ -6,7 +6,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <AppRouterCacheProvider>
       <ThemeProvider>
-        {children}
+          {children}
       </ThemeProvider>
     </AppRouterCacheProvider>
   )

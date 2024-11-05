@@ -11,7 +11,7 @@ function formatSocialLink(type?: ISocials) {
   switch(type) {
     case 'facebook': return {
       img: 'FB',
-      link: LINKS.X
+      link: '#'
     };
     case 'instagram': return {
       img: 'IG',
@@ -19,7 +19,7 @@ function formatSocialLink(type?: ISocials) {
     };
     default: return {
       img: 'X',
-      link: '#'
+      link: LINKS.X
     }
   }
 }
