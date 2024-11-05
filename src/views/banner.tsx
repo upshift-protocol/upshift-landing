@@ -32,7 +32,7 @@ export default function BannerView({ pools, tokens }: { pools?: IPoolWithUnderly
 
   return (
     <Stack direction={{ xs: 'column', lg: 'row' }} justifyContent={"space-between"} mt={{ xs: 6, lg: 8 }} gap={4}>
-    <Stack direction={"row"} gap={{ xs: 4, lg: 6 }}>
+    <Stack direction={{xs: "column", sm: "row"}} gap={{ xs: 2, md: 4, lg: 6 }}>
       <Stack direction="row" gap={2} alignItems={"center"}>
         <Typography textTransform={"uppercase"}>Total Deposited</Typography>
         <Chip color="primary" label={formatUsd(totalSupplied)} />

@@ -5,22 +5,18 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import { STYLE_VARS } from '@/utils/constants';
-import { useThemeMode } from '@/stores/theme';
-import { Button, Drawer, IconButton } from '@mui/material';
-import { useState } from 'react';
-import Grid from '@mui/material/Grid';
 import Logo from './logo';
 import Link from 'next/link';
 import SocialLink from './social-link';
 
 export default function Header() {
-  const { isDark, toggleTheme } = useThemeMode();
+  // const { isDark, toggleTheme } = useThemeMode();
 
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
-  const toggleDrawer = (newOpen: boolean) => () => {
-    setOpen(newOpen);
-  };
+  // const toggleDrawer = (newOpen: boolean) => () => {
+  //   setOpen(newOpen);
+  // };
 
   return (
     <header>
@@ -59,7 +55,7 @@ export default function Header() {
               direction="row"
               alignItems="center"
               gap={{ xs: 1, md: 2 }}
-              display={{ xs: 'none', sm: 'flex' }}
+              display={{ xs: 'flex' }}
             >
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
               <Stack>
@@ -68,7 +64,7 @@ export default function Header() {
             </Stack>
 
             {/* Mobile */}
-            <Stack
+            {/* <Stack
               direction="row"
               alignItems="center"
               gap={{ xs: 1, md: 2 }}
@@ -168,7 +164,7 @@ export default function Header() {
                   </Stack>
                 </Box>
               </Drawer>
-            </Stack>
+            </Stack> */}
           </Toolbar>
         </AppBar>
       </Box>
