@@ -6,17 +6,17 @@ const _description =
 const rootUrl = "https://upshift.finance";
 
 export default function buildMetadata(
-  title = _title,
+  title?: string,
   description = _description,
 ): Metadata {
   return {
-    title: `${title} | ${_title}`,
+    title: title ? `${title} | ${_title}` : _title,
     metadataBase: new URL(rootUrl),
     description: description,
     openGraph: {
       type: "website",
       url: rootUrl,
-      title: `${title} | ${_title}`,
+      title: title ? `${title} | ${_title}` : _title,
       description: description,
       siteName: _title,
       images: [
