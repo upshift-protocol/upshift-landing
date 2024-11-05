@@ -77,10 +77,11 @@ Open http://localhost:3000 in your browser to start working on the UpShift app.
 │   ├── pages                   # Next JS pages
 │   ├── styles                  # All CSS files
 │   ├── components              # UI components
-│   └── utils                   # Utility folder
-│       ├── constants           # Various constant variables denoted in uppercase
-│       ├── helpers             # Various helper methods
-│       └── types               # Global typescript interfaces 
+│   ├── utils                   # UI components
+│   │   ├── constants           # Various constant variables denoted in uppercase
+│   │   ├── helpers             # Various helper methods
+│   │   └── types               # Global typescript interfaces 
+│   └── views                   # Views to be used in app/*
 ├── ...
 └── tsconfig.json               # TypeScript configuration
 ```
