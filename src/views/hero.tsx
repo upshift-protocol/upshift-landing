@@ -32,14 +32,14 @@ export default function HeroView() {
             controls. Supply, stake, and access cross-chain yields.
           </Typography>
           {/* <Link href={LINKS.APP} target="_blank"> */}
-            <Button
-              variant="outlined"
-              sx={{ width: "fit-content" }}
-              size="large"
-              style={{ fontSize: "18px" }}
-            >
-              Coming Soon
-            </Button>
+          <Button
+            variant="outlined"
+            sx={{ width: "fit-content" }}
+            size="large"
+            style={{ fontSize: "18px" }}
+          >
+            Coming Soon
+          </Button>
           {/* </Link> */}
         </Stack>
       </Box>

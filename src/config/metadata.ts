@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 const _title = "Upshift Finance";
 const _description =
-  "Earn yields from real institutional loans via the Upshift protocol. Democratizing high-yield investments traditionally limited to financial institutions.";
+  "Upshift opens access to transparent yields backed by secure risk controls. Supply, stake and access cross-chain yields.";
 const rootUrl = "https://upshift.finance";
 
 export default function buildMetadata(

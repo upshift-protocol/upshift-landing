@@ -4,10 +4,11 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
-import { STYLE_VARS } from "@/utils/constants";
+import { LINKS, STYLE_VARS } from "@/utils/constants";
 import Logo from "./logo";
 import Link from "next/link";
 import SocialLink from "./social-link";
+import { Typography } from "@mui/material";
 
 export default function Header() {
   // const { isDark, toggleTheme } = useThemeMode();
@@ -51,16 +52,16 @@ export default function Header() {
             </Link>
 
             {/* Desktop */}
-            <Stack
-              direction="row"
-              alignItems="center"
-              gap={{ xs: 1, md: 2 }}
-              display={{ xs: "flex" }}
-            >
+            <Stack direction="row" alignItems="center" gap={{ xs: 2, lg: 3 }}>
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
-              <Stack>
-                <SocialLink />
-              </Stack>
+              <Link
+                href={LINKS.DOCS}
+                target="_blank"
+                className="transition duration-150 hover:text-[#00FF7E]"
+              >
+                <Typography textTransform={"uppercase"}>Docs</Typography>
+              </Link>
+              <SocialLink />
             </Stack>
 
             {/* Mobile */}
