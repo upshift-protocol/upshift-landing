@@ -52,17 +52,12 @@ export default function Header() {
             </Link>
 
             {/* Desktop */}
-            <Stack
-              direction="row"
-              alignItems="center"
-              gap={{ xs: 2, lg: 4 }}
-              display={{ xs: "flex" }}
-            >
+            <Stack direction="row" alignItems="center" gap={{ xs: 2, lg: 3 }}>
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
               <Link
                 href={LINKS.DOCS}
                 target="_blank"
-                className="transition duration-150 hover:opacity-80"
+                className="transition duration-150 hover:text-[#00FF7E]"
               >
                 <Typography textTransform={"uppercase"}>Docs</Typography>
               </Link>
