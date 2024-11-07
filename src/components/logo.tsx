@@ -1,6 +1,5 @@
 "use client";
 
-import { useThemeMode } from "@/stores/theme";
 import Image from "next/image";
 
 export default function Logo({
@@ -10,10 +9,9 @@ export default function Logo({
   height?: number;
   width?: number;
 }) {
-  const { isDark } = useThemeMode();
   return (
     <Image
-      src={`/assets/logos/upshift-wordmark-${isDark ? "color" : "black-color"}.svg`}
+      src={`/assets/logos/upshift-wordmark-black-color.svg`}
       alt="Upshift Finance Logo"
       width={width}
       height={height}
