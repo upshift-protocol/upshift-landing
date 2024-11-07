@@ -4,6 +4,7 @@ import buildMetadata from "@/config/metadata";
 import Providers from "./providers";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata = buildMetadata();
 
@@ -21,6 +22,8 @@ export default function RootLayout({
           <Footer />
         </Providers>
       </body>
+
+      <GoogleTagManager gtmId="G-ZV739K401K" />
     </html>
   );
 }
