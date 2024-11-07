@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer>
       <Stack
-        paddingY={"1rem"}
+        paddingY={2}
         paddingX={{ xs: "16px", sm: "24px" }}
         direction={{ sm: "row" }}
         justifyContent={"center"}
@@ -17,7 +17,7 @@ export default function Footer() {
         margin={"0 auto"}
       >
         <Box>
-          <Typography fontSize={12}>
+          <Typography fontSize={12} color="textDisabled">
             Copyright &copy; {new Date().getFullYear()}{" "}
             {String(buildMetadata().openGraph?.siteName)}
           </Typography>

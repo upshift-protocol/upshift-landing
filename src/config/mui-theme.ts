@@ -37,6 +37,7 @@ const baseTheme: ThemeOptions = {
       fontFamily: FONTS.visiaPro.style.fontFamily,
       fontWeight: HEADER_FONT_WEIGHT,
       textTransform: "uppercase",
+      fontSize: "30px",
     },
     h6: {
       fontFamily: FONTS.visiaPro.style.fontFamily,
