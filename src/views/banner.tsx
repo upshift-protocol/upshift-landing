@@ -40,7 +40,7 @@ export default function BannerView({
     <Stack
       direction={{ xs: "column", lg: "row" }}
       justifyContent={"space-between"}
-      mt={{ xs: 6, lg: 8 }}
+      mt={{ xs: 4, lg: 6 }}
       gap={4}
     >
       <Stack

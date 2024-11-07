@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className={`${FONTS.visiaPro.variable} antialiased bg-black`}>
         <Providers>
           <Header />
-          <main className="min-h-[calc(100vh-88px)]">{children}</main>
+          <main>{children}</main>
           <Footer />
         </Providers>
       </body>

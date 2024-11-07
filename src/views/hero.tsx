@@ -20,7 +20,7 @@ export default function HeroView() {
             style={FONTS.dinCondensed.style}
             fontWeight="400"
           >
-            Growith Simplified
+            Growth Simplified
           </Typography>
           <Typography variant="h1" component={"h1"} textTransform="inherit">
             Unlock the full power of Real Yields
@@ -43,7 +43,7 @@ export default function HeroView() {
           {/* </Link> */}
         </Stack>
       </Box>
-      <Box maxWidth={{ sm: "auto", lg: "60vw" }}>
+      <Box maxWidth={{ sm: "auto", lg: "57.5vw" }}>
         <video autoPlay muted loop>
           <source src="/assets/videos/chart-animation.mp4" />
         </video>
