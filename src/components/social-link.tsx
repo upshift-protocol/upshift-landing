@@ -19,6 +19,14 @@ function formatSocialLink(type?: ISocials) {
         img: "IG",
         link: "#",
       };
+    case "telegram":
+      return {
+        img: "TG",
+        link: LINKS.TG,
+        height: 24,
+        width: 24,
+        padding: "p-[3px]",
+      };
     default:
       return {
         img: "X",
@@ -33,13 +41,13 @@ export default function SocialLink({ type }: ISocialLink) {
     <Link
       href={selectedSocial.link}
       target="_blank"
-      className="bg-white rounded-full p-[7px] transition duration-150 shadow-[0px_0px_12px_2px_#000)] hover:shadow-[0px_0px_12px_2px_#00FF96]"
+      className={`bg-white rounded-full ${selectedSocial.padding || "p-[7px]"} transition duration-150 shadow-[0px_0px_12px_2px_#000)] hover:shadow-[0px_0px_12px_2px_#00FF96]`}
     >
       <Image
         src={`/assets/socials/${selectedSocial.img}.svg`}
         alt={String(type || "Twitter / X Social Link")}
-        width={16}
-        height={16}
+        width={selectedSocial?.width || 16}
+        height={selectedSocial?.height || 16}
       />
     </Link>
   );
