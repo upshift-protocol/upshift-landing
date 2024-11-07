@@ -11,7 +11,7 @@ export default function Logo({
 }) {
   return (
     <Image
-      src={`/assets/logos/upshift-wordmark-black-color.svg`}
+      src={`/assets/logos/upshift-wordmark-color.svg`}
       alt="Upshift Finance Logo"
       width={width}
       height={height}

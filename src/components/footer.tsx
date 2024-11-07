@@ -17,7 +17,7 @@ export default function Footer() {
         margin={"0 auto"}
       >
         <Box>
-          <Typography fontSize={12} color="textDisabled">
+          <Typography fontSize={12} color="darkgray">
             Copyright &copy; {new Date().getFullYear()}{" "}
             {String(buildMetadata().openGraph?.siteName)}
           </Typography>
