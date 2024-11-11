@@ -1,6 +1,8 @@
 import FONTS from "@/config/fonts";
+import { LINKS } from "@/utils/constants";
 // import { LINKS } from "@/utils/constants";
 import { Box, Button, Stack, Typography } from "@mui/material";
+import Link from "next/link";
 // import Link from "next/link";
 
 export default function HeroView() {
@@ -31,16 +33,16 @@ export default function HeroView() {
             Upshift opens access to transparent yields backed by secure risk
             controls. Supply, stake, and access cross-chain yields.
           </Typography>
-          {/* <Link href={LINKS.APP} target="_blank"> */}
-          <Button
-            variant="outlined"
-            sx={{ width: "fit-content" }}
-            size="large"
-            style={{ fontSize: "18px" }}
-          >
-            Coming Soon
-          </Button>
-          {/* </Link> */}
+          <Link href={LINKS.APP} target="_blank">
+            <Button
+              variant="outlined"
+              sx={{ width: "fit-content" }}
+              size="large"
+              style={{ fontSize: "18px" }}
+            >
+              Enter App
+            </Button>
+          </Link>
         </Stack>
       </Box>
       <Box maxWidth={{ sm: "auto", lg: "57.5vw" }}>
