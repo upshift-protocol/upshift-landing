@@ -24,7 +24,7 @@ export default async function Footer() {
 
   return (
     <footer>
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ marginBottom: 2 }}>
         <BannerView pools={pools} tokens={tokens} />
       </Container>
 
