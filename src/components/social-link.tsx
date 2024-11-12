@@ -22,7 +22,7 @@ function formatSocialLink(type?: ISocials) {
     case "telegram":
       return {
         img: "TG",
-        link: LINKS.TG,
+        link: LINKS.EXTERNAL.TG,
         height: 24,
         width: 24,
         padding: "p-[3px]",
@@ -30,7 +30,7 @@ function formatSocialLink(type?: ISocials) {
     default:
       return {
         img: "X",
-        link: LINKS.X,
+        link: LINKS.EXTERNAL.X,
       };
   }
 }

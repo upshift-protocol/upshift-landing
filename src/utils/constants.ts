@@ -16,10 +16,16 @@ export const STYLE_VARS = {
 
 // links
 export const LINKS = {
-  X: `https://x.com/upshift_fi`,
-  APP: "https://avax.upshift.finance",
-  DOCS: "https://docs.upshift.finance",
-  TG: "https://t.me/upshift_finance",
+  BASE: process.env.NEXT_PUBLIC_URL || "https://upshift.finance",
+  INTERNAL: {
+    HOME: "/",
+  },
+  EXTERNAL: {
+    X: `https://x.com/upshift_fi`,
+    APP: "https://avax.upshift.finance",
+    DOCS: "https://docs.upshift.finance",
+    TG: "https://t.me/upshift_finance",
+  },
 };
 
 // external
