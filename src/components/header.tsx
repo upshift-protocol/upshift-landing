@@ -55,7 +55,7 @@ export default function Header() {
             <Stack direction="row" alignItems="center" gap={{ xs: 2, lg: 3 }}>
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
               <Link
-                href={LINKS.DOCS}
+                href={LINKS.EXTERNAL.DOCS}
                 target="_blank"
                 className="transition duration-150 hover:text-[#00FF7E]"
               >

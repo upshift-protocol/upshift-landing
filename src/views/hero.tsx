@@ -33,7 +33,7 @@ export default function HeroView() {
             Upshift opens access to transparent yields backed by secure risk
             controls. Supply, stake, and access cross-chain yields.
           </Typography>
-          <Link href={LINKS.APP} target="_blank">
+          <Link href={LINKS.EXTERNAL.APP} target="_blank">
             <Button
               variant="outlined"
               sx={{ width: "fit-content" }}
