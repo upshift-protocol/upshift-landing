@@ -1,9 +1,8 @@
 import FONTS from "@/config/fonts";
 import { LINKS } from "@/utils/constants";
-// import { LINKS } from "@/utils/constants";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import Link from "next/link";
-// import Link from "next/link";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 export default function HeroView() {
   return (
@@ -39,6 +38,12 @@ export default function HeroView() {
               sx={{ width: "fit-content" }}
               size="large"
               style={{ fontSize: "18px" }}
+              onClick={() =>
+                sendGTMEvent({
+                  event: "button-click",
+                  name: "enter-app",
+                })
+              }
             >
               Enter App
             </Button>
