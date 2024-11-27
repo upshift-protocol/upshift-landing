@@ -1,8 +1,6 @@
 import FONTS from "@/config/fonts";
-import { LINKS } from "@/utils/constants";
-import { Box, Button, Stack, Typography } from "@mui/material";
-import Link from "next/link";
-import { sendGTMEvent } from "@next/third-parties/google";
+import { Box, Stack, Typography } from "@mui/material";
+import DropdownButton from "@/components/dropdown-button";
 
 export default function HeroView() {
   return (
@@ -32,22 +30,7 @@ export default function HeroView() {
             Upshift opens access to transparent yields backed by secure risk
             controls. Supply, stake, and access cross-chain yields.
           </Typography>
-          <Link href={LINKS.EXTERNAL.APP} target="_blank">
-            <Button
-              variant="outlined"
-              sx={{ width: "fit-content" }}
-              size="large"
-              style={{ fontSize: "18px" }}
-              onClick={() =>
-                sendGTMEvent({
-                  event: "button-click",
-                  name: "enter-app",
-                })
-              }
-            >
-              Enter App
-            </Button>
-          </Link>
+          <DropdownButton />
         </Stack>
       </Box>
       <Box maxWidth={{ sm: "auto", lg: "57.5vw" }}>
