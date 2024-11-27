@@ -23,7 +23,9 @@ export default function RootLayout({
         </Providers>
       </body>
 
-      <GoogleTagManager gtmId="G-ZV739K401K" />
+      <GoogleTagManager
+        gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER || ""}
+      />
     </html>
   );
 }
