@@ -7,6 +7,16 @@ import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
 import { LINKS } from "@/utils/constants";
 import { sendGTMEvent } from "@next/third-parties/google";
+import { styled } from "@mui/material";
+
+const StyledMenu = styled(Menu)`
+  .MuiMenu-paper {
+    margin-top: 6px;
+    outline: 1px solid #00ff96;
+    background-color: black;
+    border-radius: 1rem;
+  }
+`;
 
 export default function DropdownButton() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -36,8 +46,8 @@ export default function DropdownButton() {
         aria-expanded={open ? "true" : undefined}
         endIcon={
           <svg
-            width="16px"
-            height="16px"
+            width="12px"
+            height="12px"
             viewBox="0 -0.5 17 17"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -56,28 +66,32 @@ export default function DropdownButton() {
       >
         Enter App
       </Button>
-      <Menu
+      <StyledMenu
         id="enter-app-dropdown-button-menu"
         aria-labelledby="enter-app-dropdown-button"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        // anchorOrigin={{
-        //   vertical: 'top',
-        //   horizontal: 'left',
-        // }}
-        // transformOrigin={{
-        //   vertical: 'top',
-        //   horizontal: 'left',
-        // }}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
       >
         <Link href={LINKS.EXTERNAL.APP_AVAX} target="_blank">
-          <MenuItem onClick={handleClose}>Avax AUSD</MenuItem>
+          <MenuItem onClick={handleClose} sx={{ color: "#00FF96" }}>
+            Avax AUSD
+          </MenuItem>
         </Link>
         <Link href={LINKS.EXTERNAL.APP_LOMBARD} target="_blank">
-          <MenuItem onClick={handleClose}>Lombard LBTC</MenuItem>
+          <MenuItem onClick={handleClose} sx={{ color: "#00FF96" }}>
+            Lombard LBTC
+          </MenuItem>
         </Link>
-      </Menu>
+      </StyledMenu>
     </div>
   );
 }
