@@ -91,6 +91,11 @@ export default function DropdownButton() {
             Lombard LBTC
           </MenuItem>
         </Link>
+        <Link href={LINKS.EXTERNAL.APP_ETHENA} target="_blank">
+          <MenuItem onClick={handleClose} sx={{ color: "#00FF96" }}>
+            Ethena sUSDe
+          </MenuItem>
+        </Link>
       </StyledMenu>
     </div>
   );
