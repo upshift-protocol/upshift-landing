@@ -26,6 +26,8 @@ export const LINKS = {
     TG: "https://t.me/upshift_finance",
     APP_AVAX: "https://avax.upshift.finance",
     APP_LOMBARD: "https://lombard.upshift.finance",
+    APP_TREEHOUSE: "https://treehouse.upshift.finance",
+    APP_ETHENA: "https://ethena.upshift.finance",
   },
 };
 
