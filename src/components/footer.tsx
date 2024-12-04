@@ -15,6 +15,7 @@ import { IPoolWithUnderlying } from "@augustdigital/sdk";
 export default function Footer() {
   const [pools, setPools] = useState<IPoolWithUnderlying[]>([]);
   const [tokens, setTokens] = useState<IToken[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -32,13 +33,14 @@ export default function Footer() {
       );
       setPools(poolsData);
       setTokens(tokensData);
+      setIsLoading(false);
     })().catch(console.error);
   }, []);
 
   return (
     <footer>
       <Container maxWidth="xl" sx={{ marginBottom: 2 }}>
-        <BannerView pools={pools} tokens={tokens} />
+        <BannerView pools={pools} tokens={tokens} loading={isLoading} />
       </Container>
 
       <Stack

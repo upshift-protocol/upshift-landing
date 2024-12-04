@@ -3,16 +3,18 @@ import { INVESTORS_IMGS } from "@/utils/constants";
 import { formatUsd } from "@/utils/helpers";
 import { IToken } from "@/utils/types";
 import { IPoolWithUnderlying, toNormalizedBn } from "@augustdigital/sdk";
-import { Box, Grid2, Stack, Typography } from "@mui/material";
+import { Box, Grid2, Skeleton, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { useMemo } from "react";
 
 export default function BannerView({
   pools,
   tokens,
+  loading,
 }: {
   pools?: IPoolWithUnderlying[];
   tokens?: IToken[];
+  loading?: boolean;
 }) {
   const totalSupplied = useMemo(() => {
     if (!pools?.length) return "0.0";
@@ -57,7 +59,11 @@ export default function BannerView({
           >
             Total Deposited
           </Typography>
-          <Typography variant="h5">{formatUsd(totalSupplied)}</Typography>
+          {loading ? (
+            <Skeleton variant="text" height={"40px"} width="176px" />
+          ) : (
+            <Typography variant="h5">{formatUsd(totalSupplied)}</Typography>
+          )}
         </Stack>
         <Stack direction="column" minWidth={"150px"}>
           <Typography
@@ -69,7 +75,11 @@ export default function BannerView({
           >
             Total Borrowed
           </Typography>
-          <Typography variant="h5">{formatUsd(totalBorrow)}</Typography>
+          {loading ? (
+            <Skeleton variant="text" height={"40px"} width="176px" />
+          ) : (
+            <Typography variant="h5">{formatUsd(totalBorrow)}</Typography>
+          )}
         </Stack>
       </Stack>
 
