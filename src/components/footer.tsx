@@ -1,3 +1,5 @@
+"use client";
+
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import buildMetadata from "@/config/metadata";
@@ -7,20 +9,31 @@ import BannerView from "@/views/banner";
 import augustSdk from "@/config/august-sdk";
 import { IToken } from "@/utils/types";
 import { Container } from "@mui/material";
+import { useEffect, useState } from "react";
+import { IPoolWithUnderlying } from "@augustdigital/sdk";
 
-export default async function Footer() {
-  const pools = await augustSdk.pools.getPools();
-  const tokens: IToken[] = await Promise.all(
-    pools?.map(async (p) => {
-      const price = await augustSdk.getPrice(
-        p.underlying?.symbol?.toLowerCase(),
+export default function Footer() {
+  const [pools, setPools] = useState<IPoolWithUnderlying[]>([]);
+  const [tokens, setTokens] = useState<IToken[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const poolsData = await augustSdk.pools.getPools();
+      const tokensData: IToken[] = await Promise.all(
+        poolsData?.map(async (p) => {
+          const price = await augustSdk.getPrice(
+            p.underlying?.symbol?.toLowerCase(),
+          );
+          return {
+            ...p.underlying,
+            price,
+          };
+        }),
       );
-      return {
-        ...p.underlying,
-        price,
-      };
-    }),
-  );
+      setPools(poolsData);
+      setTokens(tokensData);
+    })().catch(console.error);
+  }, []);
 
   return (
     <footer>
