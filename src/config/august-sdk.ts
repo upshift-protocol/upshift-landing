@@ -6,6 +6,7 @@ const augustSdk = new AugustDigitalSDK({
   providers: {
     43114: `https://avax-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
     1: `https://eth-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
+    8453: `https://base-mainnet.g.alchemy.com/v2/${ALCHEMY_API_KEY}`,
   },
   env: process.env.NEXT_PUBLIC_DEV ? "DEV" : "PROD",
 });
