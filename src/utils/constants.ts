@@ -23,7 +23,7 @@ export const LINKS = {
   EXTERNAL: {
     X: `https://x.com/upshift_fi`,
     DOCS: "https://docs.upshift.finance",
-    TG: "https://t.me/upshift_finance",
+    TG: "https://t.me/upshift_fi",
     APP_AVAX: "https://avax.upshift.finance",
     APP_LOMBARD: "https://lombard.upshift.finance",
     APP_TREEHOUSE: "https://treehouse.upshift.finance",
