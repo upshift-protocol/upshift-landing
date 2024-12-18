@@ -5,7 +5,6 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Link from "next/link";
-import { LINKS } from "@/utils/constants";
 import { sendGTMEvent } from "@next/third-parties/google";
 import { styled } from "@mui/material";
 import Svg from "@/utils/svgs";
@@ -88,21 +87,6 @@ export default function DropdownButton({
             </MenuItem>
           </Link>
         ))}
-        <Link href={LINKS.EXTERNAL.APP_AVAX} target="_blank">
-          <MenuItem onClick={handleClose} sx={{ color: "#00FF96" }}>
-            Avax AUSD
-          </MenuItem>
-        </Link>
-        <Link href={LINKS.EXTERNAL.APP_LOMBARD} target="_blank">
-          <MenuItem onClick={handleClose} sx={{ color: "#00FF96" }}>
-            Lombard LBTC
-          </MenuItem>
-        </Link>
-        <Link href={LINKS.EXTERNAL.APP_ETHENA} target="_blank">
-          <MenuItem onClick={handleClose} sx={{ color: "#00FF96" }}>
-            Ethena sUSDe
-          </MenuItem>
-        </Link>
       </StyledMenu>
     </div>
   );
