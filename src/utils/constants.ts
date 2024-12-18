@@ -62,3 +62,18 @@ export const INVESTORS_IMGS = [
     height: 30,
   },
 ];
+
+export const APP_INSTANCES_LINKS = [
+  {
+    link: LINKS.EXTERNAL.APP_AVAX,
+    text: "Avax AUSD",
+  },
+  {
+    link: LINKS.EXTERNAL.APP_LOMBARD,
+    text: "Lombard LBTC",
+  },
+  {
+    link: LINKS.EXTERNAL.APP_ETHENA,
+    text: "Ethena sUSDe",
+  },
+];
