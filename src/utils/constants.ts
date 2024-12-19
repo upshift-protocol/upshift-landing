@@ -66,7 +66,11 @@ export const INVESTORS_IMGS = [
 export const APP_INSTANCES_LINKS = [
   {
     link: LINKS.EXTERNAL.APP_AVAX,
-    text: "Avax AUSD",
+    text: "Avalanche AVAX",
+  },
+  {
+    link: LINKS.EXTERNAL.APP_AVAX,
+    text: "Avalanche AUSD",
   },
   {
     link: LINKS.EXTERNAL.APP_LOMBARD,
