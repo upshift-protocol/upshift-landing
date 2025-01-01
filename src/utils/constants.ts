@@ -80,4 +80,8 @@ export const APP_INSTANCES_LINKS = [
     link: LINKS.EXTERNAL.APP_ETHENA,
     text: "Ethena sUSDe",
   },
+  {
+    link: LINKS.EXTERNAL.APP_TREEHOUSE,
+    text: "Treehouse",
+  },
 ];
