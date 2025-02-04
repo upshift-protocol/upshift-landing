@@ -21,6 +21,7 @@ export const LINKS = {
     HOME: "/",
   },
   EXTERNAL: {
+    DISCORD: "https://discord.gg/upshift",
     X: `https://x.com/upshift_fi`,
     DOCS: "https://docs.upshift.finance",
     TG: "https://t.me/upshift_fi",
