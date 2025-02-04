@@ -62,7 +62,8 @@ export default function Header() {
                 <Typography textTransform={"uppercase"}>Docs</Typography>
               </Link>
               <SocialLink type="telegram" />
-              <SocialLink />
+              <SocialLink type="discord" />
+              <SocialLink type="x" />
             </Stack>
 
             {/* Mobile */}

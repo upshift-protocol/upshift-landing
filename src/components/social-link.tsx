@@ -19,6 +19,14 @@ function formatSocialLink(type?: ISocials) {
         img: "IG",
         link: "#",
       };
+    case "discord":
+      return {
+        img: "DISCORD",
+        link: LINKS.EXTERNAL.DISCORD,
+        height: 24,
+        width: 24,
+        padding: "p-[4px]",
+      };
     case "telegram":
       return {
         img: "TG",
