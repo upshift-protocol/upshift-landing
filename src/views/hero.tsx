@@ -28,8 +28,9 @@ export default function HeroView() {
         </Stack>
         <Stack gap={2} mt={2}>
           <Typography variant="body1" component="h6" fontWeight="600">
-            Upshift opens access to transparent yields backed by secure risk
-            controls. Supply, stake, and access cross-chain yields.
+            In the world of composable DeFi legos, Upshift makes every asset
+            yield-bearing. Supply, stake, and access cross-chain yields
+            everywhere.
           </Typography>
 
           <Link href={LINKS.EXTERNAL.APP_MAIN}>
