@@ -29,6 +29,8 @@ export const LINKS = {
     APP_LOMBARD: "https://lombard.upshift.finance",
     APP_TREEHOUSE: "https://treehouse.upshift.finance",
     APP_ETHENA: "https://ethena.upshift.finance",
+    APP_MAIN: "https://app.upshift.finance",
+    APP_PRIVATE: "https://private.upshift.finance",
   },
 };
 

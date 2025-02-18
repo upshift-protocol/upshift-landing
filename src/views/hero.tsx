@@ -1,7 +1,7 @@
 import FONTS from "@/config/fonts";
-import { Box, Stack, Typography } from "@mui/material";
-import DropdownButton from "@/components/dropdown-button";
-import { APP_INSTANCES_LINKS } from "@/utils/constants";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import { LINKS } from "@/utils/constants";
+import Link from "next/link";
 
 export default function HeroView() {
   return (
@@ -31,9 +31,18 @@ export default function HeroView() {
             Upshift opens access to transparent yields backed by secure risk
             controls. Supply, stake, and access cross-chain yields.
           </Typography>
-          <DropdownButton options={APP_INSTANCES_LINKS}>
-            Enter App
-          </DropdownButton>
+
+          <Link href={LINKS.EXTERNAL.APP_MAIN}>
+            <Button
+              id="enter-app-dropdown-button"
+              variant="outlined"
+              sx={{ width: "fit-content" }}
+              size="large"
+              style={{ fontSize: "18px" }}
+            >
+              Enter App
+            </Button>
+          </Link>
         </Stack>
       </Box>
       <Box maxWidth={{ sm: "auto", lg: "57.5vw" }}>
