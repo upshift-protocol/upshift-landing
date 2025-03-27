@@ -49,7 +49,7 @@ export default function SocialLink({ type }: ISocialLink) {
     <Link
       href={selectedSocial.link}
       target="_blank"
-      className={`bg-white rounded-full ${selectedSocial.padding || "p-[7px]"} transition duration-150 shadow-[0px_0px_12px_2px_#000)] hover:shadow-[0px_0px_12px_2px_#00FF96]`}
+      className={`bg-white rounded-full ${selectedSocial.padding || "p-[7px]"} transition duration-150 border-2 border-transparent hover:border-[#00FF96]`}
     >
       <Image
         src={`/assets/socials/${selectedSocial.img}.svg`}

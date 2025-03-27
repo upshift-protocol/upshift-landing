@@ -30,6 +30,11 @@ main {
 
 p, span, h1, h2, h3, h4, h5, h6, a {
   color: #fff;
+  transition: 0.15s ease;
+}
+
+button {
+  text-transform: capitalize !important;
 }
 
 @layer utilities {

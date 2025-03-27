@@ -9,6 +9,8 @@ import Logo from "./logo";
 import Link from "next/link";
 import SocialLink from "./social-link";
 import { Typography } from "@mui/material";
+import Banner from "./banner";
+import { StyledLink } from "@/styles/styled";
 
 export default function Header() {
   // const { isDark, toggleTheme } = useThemeMode();
@@ -21,6 +23,28 @@ export default function Header() {
 
   return (
     <header>
+      {process.env.NEXT_PUBLIC_BANNER ? (
+        <Box
+          sx={{
+            maxWidth: STYLE_VARS.width,
+            margin: "0 auto",
+            width: "100%",
+            padding: "24px",
+          }}
+        >
+          <Banner
+            title="Introducing Upshift"
+            description="Read about our vision to bridge the gap between CeFi and DeFi with institutional-grade yield"
+            image={{ path: "logos/upshift-logomark.svg" }}
+            cta={{
+              text: "View Blog",
+              href: "#",
+              target: "",
+            }}
+          />
+        </Box>
+      ) : null}
+
       <Box sx={{ flexGrow: 1, mb: "1rem" }}>
         <AppBar
           position="static"
@@ -33,7 +57,7 @@ export default function Header() {
         >
           <Toolbar
             style={{
-              maxWidth: STYLE_VARS.widthWide,
+              maxWidth: STYLE_VARS.width,
               margin: "0 auto",
               width: "100%",
               justifyContent: "space-between",
@@ -52,15 +76,15 @@ export default function Header() {
             </Link>
 
             {/* Desktop */}
-            <Stack direction="row" alignItems="center" gap={{ xs: 2, lg: 3 }}>
+            <Stack direction="row" alignItems="center" gap={{ xs: 2 }}>
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
-              <Link
+              <StyledLink
                 href={LINKS.EXTERNAL.DOCS}
                 target="_blank"
-                className="transition duration-150 hover:text-[#00FF7E]"
+                className="mr-1 !pb-0"
               >
                 <Typography textTransform={"uppercase"}>Docs</Typography>
-              </Link>
+              </StyledLink>
               <SocialLink type="telegram" />
               <SocialLink type="discord" />
               <SocialLink type="x" />

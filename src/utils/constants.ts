@@ -31,6 +31,7 @@ export const LINKS = {
     APP_ETHENA: "https://ethena.upshift.finance",
     APP_MAIN: "https://app.upshift.finance",
     APP_PRIVATE: "https://private.upshift.finance",
+    MEDIA_KIT: "https://augustdigital.notion.site/upshift-finance-media-kit",
   },
 };
 

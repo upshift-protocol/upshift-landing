@@ -36,12 +36,12 @@ export default function HeroView() {
           <Link href={LINKS.EXTERNAL.APP_MAIN}>
             <Button
               id="enter-app-dropdown-button"
-              variant="outlined"
+              variant="contained"
               sx={{ width: "fit-content" }}
               size="large"
               style={{ fontSize: "18px" }}
             >
-              Enter App
+              Launch App
             </Button>
           </Link>
         </Stack>
