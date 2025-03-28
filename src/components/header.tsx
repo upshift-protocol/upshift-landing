@@ -94,7 +94,7 @@ export default function Header() {
             </Link>
 
             {/* Desktop */}
-            <Stack direction="row" alignItems="center" gap={{ xs: 2 }}>
+            <Stack direction="row" alignItems="center" gap={{ xs: 2, lg: 2.5 }}>
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
               {NAV_ITEMS.map((n) => (
                 <StyledLink
