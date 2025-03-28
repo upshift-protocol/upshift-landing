@@ -12,6 +12,24 @@ import { Typography } from "@mui/material";
 import Banner from "./banner";
 import { StyledLink } from "@/styles/styled";
 
+const NAV_ITEMS = [
+  {
+    href: LINKS.EXTERNAL.BLOG,
+    text: "Vision",
+    className: "!pb-0",
+  },
+  {
+    href: LINKS.EXTERNAL.DOCS,
+    text: "Docs",
+    className: "!pb-0",
+  },
+  {
+    href: LINKS.EXTERNAL.FAQ,
+    text: "FAQ",
+    className: "mr-1 !pb-0",
+  },
+];
+
 export default function Header() {
   // const { isDark, toggleTheme } = useThemeMode();
 
@@ -37,7 +55,7 @@ export default function Header() {
             description="Read about our vision to bridge the gap between CeFi and DeFi with institutional-grade yield"
             image={{ path: "logos/upshift-logomark.svg" }}
             cta={{
-              text: "View Blog",
+              text: "See announcements",
               href: "#",
               target: "",
             }}
@@ -78,13 +96,17 @@ export default function Header() {
             {/* Desktop */}
             <Stack direction="row" alignItems="center" gap={{ xs: 2 }}>
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
-              <StyledLink
-                href={LINKS.EXTERNAL.DOCS}
-                target="_blank"
-                className="mr-1 !pb-0"
-              >
-                <Typography textTransform={"uppercase"}>Docs</Typography>
-              </StyledLink>
+              {NAV_ITEMS.map((n) => (
+                <StyledLink
+                  key={`nav-item-${n.text}`}
+                  href={n.href}
+                  target="_blank"
+                  className={n.className}
+                >
+                  <Typography textTransform={"uppercase"}>{n.text}</Typography>
+                </StyledLink>
+              ))}
+
               <SocialLink type="telegram" />
               <SocialLink type="discord" />
               <SocialLink type="x" />

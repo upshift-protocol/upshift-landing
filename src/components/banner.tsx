@@ -20,7 +20,7 @@ interface IBanner {
 const StyledStack = styled(Stack)`
   border-radius: 8px;
   padding: 16px 12px;
-  border: 1px solid #00ff7e;
+  border: 1px solid rgba(0, 255, 126, 0.5);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
