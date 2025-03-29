@@ -100,7 +100,7 @@ export default function Header() {
               direction="row"
               alignItems="center"
               gap={{ xs: 2, lg: 2.5 }}
-              display={{ xs: "none", sm: "block" }}
+              display={{ xs: "none", sm: "flex" }}
             >
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
               {NAV_ITEMS.map((n) => (
