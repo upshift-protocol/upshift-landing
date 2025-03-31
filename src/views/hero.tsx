@@ -23,14 +23,15 @@ export default function HeroView() {
             Growth Simplified
           </Typography>
           <Typography variant="h1" component={"h1"} textTransform="inherit">
-            Unlock the full power of Real Yields
+            Institutions are here.
+            <br />
+            They run Upshift DeFi vaults.
           </Typography>
         </Stack>
         <Stack gap={2} mt={2}>
           <Typography variant="body1" component="h6" fontWeight="600">
-            In the world of composable DeFi legos, Upshift makes every asset
-            yield-bearing. Supply, stake, and access cross-chain yields
-            everywhere.
+            Earn yield on stablecoins and crypto, with strategies run by top
+            DeFi funds. APY from funding rates, LPing, basis and more.
           </Typography>
 
           <Link href={LINKS.EXTERNAL.APP_MAIN}>
