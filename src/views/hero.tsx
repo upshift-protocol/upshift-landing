@@ -20,7 +20,7 @@ export default function HeroView() {
             style={FONTS.dinCondensed.style}
             fontWeight="400"
           >
-            Growth Simplified
+            Democratizing yield
           </Typography>
           <Typography variant="h1" component={"h1"} textTransform="inherit">
             Institutions are here.
