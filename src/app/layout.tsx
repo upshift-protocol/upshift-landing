@@ -5,7 +5,7 @@ import buildMetadata from "@/config/metadata";
 import Providers from "./providers";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import Script from "next/script";
 
 export const metadata = buildMetadata();
@@ -36,6 +36,11 @@ export default function RootLayout({
 
       <GoogleTagManager
         gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER || ""}
+      />
+
+      <GoogleAnalytics
+        gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ""}
+        debugMode
       />
     </html>
   );
