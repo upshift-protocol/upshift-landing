@@ -8,10 +8,11 @@ import { LINKS, STYLE_VARS } from "@/utils/constants";
 import Logo from "./logo";
 import Link from "next/link";
 import SocialLink from "./social-link";
-import { Drawer, IconButton, Typography, useMediaQuery } from "@mui/material";
+import { Drawer, IconButton, Typography } from "@mui/material";
 import Banner from "./banner";
 import { StyledLink } from "@/styles/styled";
 import { useState } from "react";
+import { log } from "@/utils/helpers";
 
 const NAV_ITEMS = [
   {
@@ -32,7 +33,6 @@ const NAV_ITEMS = [
 ];
 
 export default function Header() {
-  const {} = useMediaQuery("(min-width: 600px)");
   // const { isDark, toggleTheme } = useThemeMode();
 
   const [open, setOpen] = useState(false);
@@ -58,8 +58,8 @@ export default function Header() {
             image={{ path: "logos/upshift-logomark.svg" }}
             cta={{
               text: "See announcements",
-              href: "#",
-              target: "",
+              href: LINKS.EXTERNAL.BLOG,
+              target: "_blank",
             }}
           />
         </Box>
@@ -109,6 +109,12 @@ export default function Header() {
                   href={n.href}
                   target="_blank"
                   className={n.className}
+                  onClick={() =>
+                    log({
+                      eventType: "button-click",
+                      eventName: n.text.toLowerCase().replaceAll(" ", "-"),
+                    })
+                  }
                 >
                   <Typography textTransform={"uppercase"}>{n.text}</Typography>
                 </StyledLink>
@@ -205,6 +211,14 @@ export default function Header() {
                           href={n.href}
                           target="_blank"
                           className={n.className}
+                          onClick={() =>
+                            log({
+                              eventType: "button-click",
+                              eventName: n.text
+                                .toLowerCase()
+                                .replaceAll(" ", "-"),
+                            })
+                          }
                         >
                           <Typography textTransform={"uppercase"}>
                             {n.text}

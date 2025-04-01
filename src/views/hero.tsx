@@ -1,7 +1,10 @@
+"use client";
+
 import FONTS from "@/config/fonts";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import { LINKS } from "@/utils/constants";
 import Link from "next/link";
+import { log } from "@/utils/helpers";
 
 export default function HeroView() {
   return (
@@ -34,13 +37,19 @@ export default function HeroView() {
             DeFi funds. APY from funding rates, LPing, basis and more.
           </Typography>
 
-          <Link href={LINKS.EXTERNAL.APP_MAIN}>
+          <Link href={LINKS.EXTERNAL.APP_MAIN} target="_blank">
             <Button
               id="enter-app-dropdown-button"
               variant="contained"
               sx={{ width: "fit-content" }}
               size="large"
               style={{ fontSize: "18px" }}
+              onClick={() =>
+                log({
+                  eventType: "button-click",
+                  eventName: "launch-app",
+                })
+              }
             >
               Launch App
             </Button>
