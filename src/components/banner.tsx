@@ -22,15 +22,25 @@ const StyledStack = styled(Stack)`
   padding: 16px 12px;
   border: 1px solid rgba(0, 255, 126, 0.5);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 0.75rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    gap: 1rem;
+  }
 `;
 
 export default function Banner({ cta, image, title, description }: IBanner) {
   return (
     <StyledStack>
-      <Stack direction="row" alignItems="center" gap={"12px"}>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        alignItems="center"
+        gap={{ xs: "6px", sm: "12px" }}
+      >
         {image ? (
           <Image
             src={`/assets/${image.path}`}
@@ -39,9 +49,13 @@ export default function Banner({ cta, image, title, description }: IBanner) {
             width={image.width || 50}
           />
         ) : null}
-        <Stack>
-          <Typography fontSize={18}>{title}</Typography>
-          <Typography fontSize={16}>{description}</Typography>
+        <Stack alignItems={{ xs: "center", sm: "start" }}>
+          <Typography fontSize={18} textAlign={{ xs: "center", sm: "left" }}>
+            {title}
+          </Typography>
+          <Typography fontSize={16} textAlign={{ xs: "center", sm: "left" }}>
+            {description}
+          </Typography>
         </Stack>
       </Stack>
 
@@ -49,9 +63,8 @@ export default function Banner({ cta, image, title, description }: IBanner) {
         <Link target={cta.target} href={cta.href}>
           <Button
             variant="outlined"
-            sx={{ width: "fit-content" }}
+            sx={{ width: "fit-content", fontSize: "18px", minWidth: "180px" }}
             size="large"
-            style={{ fontSize: "18px" }}
             endIcon={
               <Image
                 src="/assets/icons/link-arrow.svg"
