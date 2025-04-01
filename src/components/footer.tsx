@@ -4,13 +4,14 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import buildMetadata from "@/config/metadata";
 import Stack from "@mui/material/Stack";
-import { STYLE_VARS } from "@/utils/constants";
+import { LINKS, STYLE_VARS } from "@/utils/constants";
 import BannerView from "@/views/banner";
 import augustSdk from "@/config/august-sdk";
 import { IToken } from "@/utils/types";
 import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { IPoolWithUnderlying } from "@augustdigital/sdk";
+import { StyledLink } from "@/styles/styled";
 
 export default function Footer() {
   const [pools, setPools] = useState<IPoolWithUnderlying[]>([]);
@@ -60,9 +61,9 @@ export default function Footer() {
         paddingY={2}
         paddingX={{ xs: "16px", sm: "24px" }}
         direction={{ sm: "row" }}
-        justifyContent={"center"}
-        alignItems={{ xs: "center", sm: "center" }}
-        maxWidth={STYLE_VARS.widthWide}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        maxWidth={STYLE_VARS.width}
         margin={"0 auto"}
       >
         <Box>
@@ -70,6 +71,16 @@ export default function Footer() {
             Copyright &copy; {new Date().getFullYear()}{" "}
             {String(buildMetadata().openGraph?.siteName)}
           </Typography>
+        </Box>
+
+        <Box>
+          <StyledLink
+            style={{ fontSize: 12 }}
+            target="_blank"
+            href={`${LINKS.EXTERNAL.MEDIA_KIT}`}
+          >
+            Media Kit
+          </StyledLink>
         </Box>
       </Stack>
     </footer>

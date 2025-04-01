@@ -8,8 +8,8 @@ importers:
   .:
     dependencies:
       "@augustdigital/sdk":
-        specifier: ^2.0.3
-        version: 2.0.3
+        specifier: ^2.12.3
+        version: 2.12.3
       "@emotion/cache":
         specifier: ^11.13.1
         version: 11.14.0
@@ -92,34 +92,40 @@ packages:
       }
     engines: { node: ">=10" }
 
-  "@augustdigital/abis@2.1.2":
+  "@augustdigital/abis@2.12.3":
     resolution:
       {
-        integrity: sha512-Kc2ljo0+R1sZc5zEIPvSPd22ArnRMs26SSLtvOhG2Xn5uY9KJMzTmjSQQOcFd3MjA0AvfHY6MoKtJTcl/Hbz1Q==,
+        integrity: sha512-pQju0q36896g8k1h2W245BrJhArWzhhmoS0xZQ7Zenr6rEMM8SAdVhd2gLY8grRv3Dy6jRTCuc/gtuvsrkY3Xw==,
       }
 
-  "@augustdigital/pools@2.0.3":
+  "@augustdigital/pools@2.12.3":
     resolution:
       {
-        integrity: sha512-ExKxvPYg6qxlRWjCn5zNwuso7594qxG1iz30aXfbEFWB/gEGj6+GpCxflgk8olZKSse7930DxN8cPjdEYiH76w==,
+        integrity: sha512-xJ95/cJ154lNVZwRkdnWQdZ959/PLqETuX0Bylo5mZpNyBhGBfkXpX6YCR8IYSQqK7rY0NwcGBpiDdBIgyJFWA==,
       }
 
-  "@augustdigital/sdk@2.0.3":
+  "@augustdigital/sdk@2.12.3":
     resolution:
       {
-        integrity: sha512-pfHyjkOz8m+kQN2OQPBPnGP9SiDSjrJkY8LMaskWfwpJz7jOeV+eM9WBcd+RioY0oqAwBRPkTZy5O1D548NBcQ==,
+        integrity: sha512-OTP5ov+oJSqw/cGb7681k2ZZL4ItGn4ABnhWNJPwhRrnlvrFtaJ3PDWq7ZJMyJm0TxqUVN5/4CrlGTyibc039A==,
       }
 
-  "@augustdigital/types@2.0.0":
+  "@augustdigital/services@2.12.3":
     resolution:
       {
-        integrity: sha512-MRM/z5u+Ft/cDYUzvjaNRIqw3V2xLUNuoaV3B9ESdc9l5ZjNFczXvKs1mw5JatpqzMrW7qpjt41tqETcPvrbVw==,
+        integrity: sha512-JNUaXYUH7BhuETf+tfwcJwxrDx5TWwm0zNqCPPjMnzR+bj9lgDBA3QJN9X6dn5BCVPlt+lq4vMzAhJQE5fwF0g==,
       }
 
-  "@augustdigital/utils@2.1.2":
+  "@augustdigital/types@2.12.3":
     resolution:
       {
-        integrity: sha512-mk9d0uvq22GsAp7SsQ7e3BsM99fSw8jYkcXoA9/exbmOHVGdULy/wsUhtlP3mvB02sp1hkm/iZZ4PoZfz+1ZSg==,
+        integrity: sha512-fLx7kKpwvlcth2HrwZE0DCSAbhs29/51Fo1i6nnWM/+BnZvU57vXoF6WHkPgIQjeY+Yf+IaOjDYeXPIY467DbA==,
+      }
+
+  "@augustdigital/utils@2.12.3":
+    resolution:
+      {
+        integrity: sha512-VyyFLzwf4OAG2bmpusQHnSE+KyJV3RhpeVak6XflpdzoBchRLxIlDi7mRK0Pz/szEb/mLENTSf3Me/1WNODPrQ==,
       }
 
   "@babel/code-frame@7.26.2":
@@ -3485,41 +3491,52 @@ snapshots:
 
   "@alloc/quick-lru@5.2.0": {}
 
-  "@augustdigital/abis@2.1.2": {}
+  "@augustdigital/abis@2.12.3": {}
 
-  "@augustdigital/pools@2.0.3":
+  "@augustdigital/pools@2.12.3":
     dependencies:
-      "@augustdigital/abis": 2.1.2
-      "@augustdigital/types": 2.0.0
-      "@augustdigital/utils": 2.1.2
+      "@augustdigital/abis": 2.12.3
+      "@augustdigital/services": 2.12.3
+      "@augustdigital/types": 2.12.3
+      "@augustdigital/utils": 2.12.3
       ethereum-block-by-date: 1.5.0
       ethers: 6.13.5
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  "@augustdigital/sdk@2.0.3":
+  "@augustdigital/sdk@2.12.3":
     dependencies:
-      "@augustdigital/abis": 2.1.2
-      "@augustdigital/pools": 2.0.3
-      "@augustdigital/types": 2.0.0
-      "@augustdigital/utils": 2.1.2
-      ethers: 6.13.5
-      upshift-earn-app: link:../../../../angellolazar/Desktop/dev/august/upshift-app
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
-
-  "@augustdigital/types@2.0.0":
-    dependencies:
+      "@augustdigital/abis": 2.12.3
+      "@augustdigital/pools": 2.12.3
+      "@augustdigital/types": 2.12.3
+      "@augustdigital/utils": 2.12.3
       ethers: 6.13.5
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  "@augustdigital/utils@2.1.2":
+  "@augustdigital/services@2.12.3":
     dependencies:
-      "@augustdigital/types": 2.0.0
+      "@augustdigital/abis": 2.12.3
+      "@augustdigital/types": 2.12.3
+      "@augustdigital/utils": 2.12.3
+      ethers: 6.13.5
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  "@augustdigital/types@2.12.3":
+    dependencies:
+      ethers: 6.13.5
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  "@augustdigital/utils@2.12.3":
+    dependencies:
+      "@augustdigital/abis": 2.12.3
+      "@augustdigital/types": 2.12.3
       ethers: 6.13.5
     transitivePeerDependencies:
       - bufferutil

@@ -8,19 +8,63 @@ import { LINKS, STYLE_VARS } from "@/utils/constants";
 import Logo from "./logo";
 import Link from "next/link";
 import SocialLink from "./social-link";
-import { Typography } from "@mui/material";
+import { Drawer, IconButton, Typography } from "@mui/material";
+import Banner from "./banner";
+import { StyledLink } from "@/styles/styled";
+import { useState } from "react";
+import { log } from "@/utils/helpers";
+
+const NAV_ITEMS = [
+  {
+    href: LINKS.EXTERNAL.BLOG,
+    text: "Vision",
+    className: "!pb-0",
+  },
+  {
+    href: LINKS.EXTERNAL.DOCS,
+    text: "Docs",
+    className: "!pb-0",
+  },
+  {
+    href: LINKS.EXTERNAL.FAQ,
+    text: "FAQ",
+    className: "mr-1 !pb-0",
+  },
+];
 
 export default function Header() {
   // const { isDark, toggleTheme } = useThemeMode();
 
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  // const toggleDrawer = (newOpen: boolean) => () => {
-  //   setOpen(newOpen);
-  // };
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(newOpen);
+  };
 
   return (
     <header>
+      {process.env.NEXT_PUBLIC_BANNER ? (
+        <Box
+          sx={{
+            maxWidth: STYLE_VARS.width,
+            margin: "0 auto",
+            width: "100%",
+            padding: "24px",
+          }}
+        >
+          <Banner
+            title="Introducing Upshift"
+            description="Read about our vision to bridge the gap between CeFi and DeFi with institutional-grade yield"
+            image={{ path: "logos/upshift-logomark.svg" }}
+            cta={{
+              text: "See announcements",
+              href: LINKS.EXTERNAL.BLOG,
+              target: "_blank",
+            }}
+          />
+        </Box>
+      ) : null}
+
       <Box sx={{ flexGrow: 1, mb: "1rem" }}>
         <AppBar
           position="static"
@@ -33,7 +77,7 @@ export default function Header() {
         >
           <Toolbar
             style={{
-              maxWidth: STYLE_VARS.widthWide,
+              maxWidth: STYLE_VARS.width,
               margin: "0 auto",
               width: "100%",
               justifyContent: "space-between",
@@ -52,26 +96,41 @@ export default function Header() {
             </Link>
 
             {/* Desktop */}
-            <Stack direction="row" alignItems="center" gap={{ xs: 2, lg: 3 }}>
+            <Stack
+              direction="row"
+              alignItems="center"
+              gap={{ xs: 2, lg: 2.5 }}
+              display={{ xs: "none", sm: "flex" }}
+            >
               {/* <ThemeSwitch checked={isDark} onChange={toggleTheme} /> */}
-              <Link
-                href={LINKS.EXTERNAL.DOCS}
-                target="_blank"
-                className="transition duration-150 hover:text-[#00FF7E]"
-              >
-                <Typography textTransform={"uppercase"}>Docs</Typography>
-              </Link>
+              {NAV_ITEMS.map((n) => (
+                <StyledLink
+                  key={`nav-item-${n.text}`}
+                  href={n.href}
+                  target="_blank"
+                  className={n.className}
+                  onClick={() =>
+                    log({
+                      eventType: "button-click",
+                      eventName: n.text.toLowerCase().replaceAll(" ", "-"),
+                    })
+                  }
+                >
+                  <Typography textTransform={"uppercase"}>{n.text}</Typography>
+                </StyledLink>
+              ))}
+
               <SocialLink type="telegram" />
               <SocialLink type="discord" />
               <SocialLink type="x" />
             </Stack>
 
             {/* Mobile */}
-            {/* <Stack
+            <Stack
               direction="row"
               alignItems="center"
               gap={{ xs: 1, md: 2 }}
-              display={{ sm: 'none' }}
+              display={{ sm: "none" }}
             >
               <IconButton
                 size="large"
@@ -116,12 +175,12 @@ export default function Header() {
                   padding={2}
                   height="100%"
                 >
-                  <Stack gap={2} height="100%" justifyContent={'space-between'}>
+                  <Stack gap={2} height="100%" justifyContent={""}>
                     <Stack
                       direction="row"
-                      alignItems={'center'}
+                      alignItems={"center"}
                       gap={2}
-                      justifyContent={'space-between'}
+                      justifyContent={"space-between"}
                     >
                       <Logo width={80} height={40} />
                       <IconButton
@@ -146,28 +205,37 @@ export default function Header() {
                       </IconButton>
                     </Stack>
                     <Stack gap={2}>
-                      <Grid
-                        container
-                        rowSpacing={1}
-                        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                      >
-                          <Button
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              toggleTheme();
-                            }}
-                            variant="outlined"
-                            fullWidth
-                            sx={{ height: '100%' }}
-                          >
-                            {isDark ? 'Light' : 'Dark'}
-                          </Button>
-                      </Grid>
+                      {NAV_ITEMS.map((n) => (
+                        <StyledLink
+                          key={`nav-item-${n.text}`}
+                          href={n.href}
+                          target="_blank"
+                          className={n.className}
+                          onClick={() =>
+                            log({
+                              eventType: "button-click",
+                              eventName: n.text
+                                .toLowerCase()
+                                .replaceAll(" ", "-"),
+                            })
+                          }
+                        >
+                          <Typography textTransform={"uppercase"}>
+                            {n.text}
+                          </Typography>
+                        </StyledLink>
+                      ))}
+                    </Stack>
+
+                    <Stack gap={2} direction="row" justifySelf={"end"}>
+                      <SocialLink type="telegram" />
+                      <SocialLink type="discord" />
+                      <SocialLink type="x" />
                     </Stack>
                   </Stack>
                 </Box>
               </Drawer>
-            </Stack> */}
+            </Stack>
           </Toolbar>
         </AppBar>
       </Box>
