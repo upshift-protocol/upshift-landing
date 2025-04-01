@@ -43,7 +43,7 @@ export default function Header() {
 
   return (
     <header>
-      {!process.env.NEXT_PUBLIC_BANNER ? (
+      {process.env.NEXT_PUBLIC_BANNER ? (
         <Box
           sx={{
             maxWidth: STYLE_VARS.width,
