@@ -8,8 +8,8 @@ importers:
   .:
     dependencies:
       "@augustdigital/sdk":
-        specifier: ^2.12.3
-        version: 2.12.3
+        specifier: ^2.16.0
+        version: 2.16.0
       "@emotion/cache":
         specifier: ^11.13.1
         version: 11.14.0
@@ -92,40 +92,40 @@ packages:
       }
     engines: { node: ">=10" }
 
-  "@augustdigital/abis@2.12.3":
+  "@augustdigital/abis@2.16.0":
     resolution:
       {
-        integrity: sha512-pQju0q36896g8k1h2W245BrJhArWzhhmoS0xZQ7Zenr6rEMM8SAdVhd2gLY8grRv3Dy6jRTCuc/gtuvsrkY3Xw==,
+        integrity: sha512-fhmJJAns+0/iPdMtvUB8rGbpb65yHrkG0pDYfEJd2Ixn9LcSokc992/nC3ML2bRzRkpIESTtuECeV7A5PCBJLw==,
       }
 
-  "@augustdigital/pools@2.12.3":
+  "@augustdigital/pools@2.16.0":
     resolution:
       {
-        integrity: sha512-xJ95/cJ154lNVZwRkdnWQdZ959/PLqETuX0Bylo5mZpNyBhGBfkXpX6YCR8IYSQqK7rY0NwcGBpiDdBIgyJFWA==,
+        integrity: sha512-Q0+dmmNHJdX/dgOQtF9SvSzFrPHRgEAgGQjOZamnGKluFHffP1fFlsEHMhLmkId2oOeVTG4egO1mIFyyOWtcmg==,
       }
 
-  "@augustdigital/sdk@2.12.3":
+  "@augustdigital/sdk@2.16.0":
     resolution:
       {
-        integrity: sha512-OTP5ov+oJSqw/cGb7681k2ZZL4ItGn4ABnhWNJPwhRrnlvrFtaJ3PDWq7ZJMyJm0TxqUVN5/4CrlGTyibc039A==,
+        integrity: sha512-PVZdU2sQfMkPlq5sD9qrbZVkWWe/KJLT8BnhAF4JmXzok4R0tLAaNPkPh2H8F69YrJ7RKV2xH0/bgW2u+EIStw==,
       }
 
-  "@augustdigital/services@2.12.3":
+  "@augustdigital/services@2.16.0":
     resolution:
       {
-        integrity: sha512-JNUaXYUH7BhuETf+tfwcJwxrDx5TWwm0zNqCPPjMnzR+bj9lgDBA3QJN9X6dn5BCVPlt+lq4vMzAhJQE5fwF0g==,
+        integrity: sha512-fwrZ/2oNUrcs9e4euxPXnM/i2Dkxzyjum4L0i7eg/0eKUQDDS3FPTtnZPM/ZvVV1b1bohRCy1Q3dHs6oRm7x8g==,
       }
 
-  "@augustdigital/types@2.12.3":
+  "@augustdigital/types@2.16.0":
     resolution:
       {
-        integrity: sha512-fLx7kKpwvlcth2HrwZE0DCSAbhs29/51Fo1i6nnWM/+BnZvU57vXoF6WHkPgIQjeY+Yf+IaOjDYeXPIY467DbA==,
+        integrity: sha512-ENgIg30SZ68sA9soO8t4HZq2DGUOw46BIo3Xx7uTcAD/qDDtGfB4xLVbDYaJh3yVfbjoa9PgVdvK5qZNNtjucA==,
       }
 
-  "@augustdigital/utils@2.12.3":
+  "@augustdigital/utils@2.16.0":
     resolution:
       {
-        integrity: sha512-VyyFLzwf4OAG2bmpusQHnSE+KyJV3RhpeVak6XflpdzoBchRLxIlDi7mRK0Pz/szEb/mLENTSf3Me/1WNODPrQ==,
+        integrity: sha512-uv432fXQvP2H+2ilwT04amS0FPfTKzDsnxKVNbMkPa1djLuXfso7MrYp2j8GStbHLLWt6YaTiBVVHBO4BNb8fA==,
       }
 
   "@babel/code-frame@7.26.2":
@@ -3491,52 +3491,52 @@ snapshots:
 
   "@alloc/quick-lru@5.2.0": {}
 
-  "@augustdigital/abis@2.12.3": {}
+  "@augustdigital/abis@2.16.0": {}
 
-  "@augustdigital/pools@2.12.3":
+  "@augustdigital/pools@2.16.0":
     dependencies:
-      "@augustdigital/abis": 2.12.3
-      "@augustdigital/services": 2.12.3
-      "@augustdigital/types": 2.12.3
-      "@augustdigital/utils": 2.12.3
+      "@augustdigital/abis": 2.16.0
+      "@augustdigital/services": 2.16.0
+      "@augustdigital/types": 2.16.0
+      "@augustdigital/utils": 2.16.0
       ethereum-block-by-date: 1.5.0
       ethers: 6.13.5
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  "@augustdigital/sdk@2.12.3":
+  "@augustdigital/sdk@2.16.0":
     dependencies:
-      "@augustdigital/abis": 2.12.3
-      "@augustdigital/pools": 2.12.3
-      "@augustdigital/types": 2.12.3
-      "@augustdigital/utils": 2.12.3
+      "@augustdigital/abis": 2.16.0
+      "@augustdigital/pools": 2.16.0
+      "@augustdigital/types": 2.16.0
+      "@augustdigital/utils": 2.16.0
       ethers: 6.13.5
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  "@augustdigital/services@2.12.3":
+  "@augustdigital/services@2.16.0":
     dependencies:
-      "@augustdigital/abis": 2.12.3
-      "@augustdigital/types": 2.12.3
-      "@augustdigital/utils": 2.12.3
+      "@augustdigital/abis": 2.16.0
+      "@augustdigital/types": 2.16.0
+      "@augustdigital/utils": 2.16.0
       ethers: 6.13.5
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  "@augustdigital/types@2.12.3":
+  "@augustdigital/types@2.16.0":
     dependencies:
       ethers: 6.13.5
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  "@augustdigital/utils@2.12.3":
+  "@augustdigital/utils@2.16.0":
     dependencies:
-      "@augustdigital/abis": 2.12.3
-      "@augustdigital/types": 2.12.3
+      "@augustdigital/abis": 2.16.0
+      "@augustdigital/types": 2.16.0
       ethers: 6.13.5
     transitivePeerDependencies:
       - bufferutil
@@ -4429,8 +4429,8 @@ snapshots:
       "@typescript-eslint/parser": 8.18.1(eslint@8.57.1)(typescript@5.7.2)
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
+      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1))(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.57.1)
       eslint-plugin-react: 7.37.2(eslint@8.57.1)
       eslint-plugin-react-hooks: 5.0.0-canary-7118f5dd7-20230705(eslint@8.57.1)
@@ -4449,7 +4449,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1):
+  eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       "@nolyfill/is-core-module": 1.0.39
       debug: 4.4.0
@@ -4461,22 +4461,22 @@ snapshots:
       is-glob: 4.0.3
       stable-hash: 0.0.4
     optionalDependencies:
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       "@typescript-eslint/parser": 8.18.1(eslint@8.57.1)(typescript@5.7.2)
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0)(eslint@8.57.1)
+      eslint-import-resolver-typescript: 3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1))(eslint@8.57.1)
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       "@rtsao/scc": 1.1.0
       array-includes: 3.1.8
@@ -4487,7 +4487,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0)(eslint@8.57.1)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.7.0(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.18.1(eslint@8.57.1)(typescript@5.7.2))(eslint@8.57.1))(eslint@8.57.1))(eslint@8.57.1)
       hasown: 2.0.2
       is-core-module: 2.16.0
       is-glob: 4.0.3

@@ -19,12 +19,29 @@ export default function BannerView({
   const totalSupplied = useMemo(() => {
     if (!pools?.length) return "0.0";
     let total = 0;
-    pools?.forEach(({ totalSupply, underlying }) => {
+    pools?.forEach(({ totalAssets, underlying, ...pool }) => {
       const foundToken = tokens?.find((t) => t.address === underlying.address);
-      total += Number(totalSupply?.normalized || 0) * (foundToken?.price || 0);
+      if (foundToken) {
+        // add actual tvl
+        total +=
+          Number(totalAssets?.normalized || 0) * (foundToken?.price || 0);
+        // add collateral values from Upshift USDC and Upshift cbBTC
+        if (
+          (pool?.name === "Upshift USDC" || pool?.name === "Upshift BTC") &&
+          pool?.loans?.length
+        ) {
+          pool?.loans?.forEach((loan) => {
+            // if (loan?.idleCapital) {
+            total +=
+              Number(loan?.principal?.normalized || 0) *
+              (foundToken?.price || 0);
+            // }
+          });
+        }
+      }
     });
     return String(total);
-  }, [pools?.length, tokens?.length]);
+  }, [JSON.stringify(pools), tokens?.length]);
 
   return (
     <Stack
