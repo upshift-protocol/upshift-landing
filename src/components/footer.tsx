@@ -20,7 +20,10 @@ export default function Footer() {
 
   useEffect(() => {
     (async () => {
-      const poolsData = await augustSdk.pools.getPools();
+      const poolsData = await augustSdk.pools.getPools({
+        loans: true,
+        allocations: true,
+      });
       const tokensData: IToken[] = await Promise.all(
         poolsData?.map(async (p) => {
           const price = await augustSdk.getPrice(
