@@ -8,11 +8,20 @@ import { LINKS, STYLE_VARS } from "@/utils/constants";
 import Logo from "./logo";
 import Link from "next/link";
 import SocialLink from "./social-link";
-import { Drawer, IconButton, Typography } from "@mui/material";
+import { Drawer, IconButton, styled, Typography } from "@mui/material";
 import Banner from "./banner";
 import { StyledLink } from "@/styles/styled";
 import { useState } from "react";
 import { log } from "@/utils/helpers";
+import Image from "next/image";
+
+const StyledAugLink = styled(Link)`
+  display: flex;
+  font-size: 12px;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+`;
 
 const NAV_ITEMS = [
   {
@@ -90,9 +99,27 @@ export default function Header() {
                 textDecoration: "none",
                 color: "inherit",
                 display: "flex",
+                position: "relative",
               }}
             >
               <Logo />
+              <Box
+                sx={{
+                  position: "absolute",
+                  bottom: "-12px",
+                  right: "0px",
+                }}
+              >
+                <StyledAugLink href={LINKS.EXTERNAL.AUGUST} target="_blank">
+                  by August
+                  <Image
+                    src="/assets/logos/august-logo-blue.svg"
+                    alt="August Digital"
+                    height={16}
+                    width={16}
+                  />
+                </StyledAugLink>
+              </Box>
             </Link>
 
             {/* Desktop */}
