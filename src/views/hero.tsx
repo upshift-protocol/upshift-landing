@@ -26,15 +26,15 @@ export default function HeroView() {
             Democratizing institutional yield
           </Typography>
           <Typography variant="h1" component={"h1"} textTransform="inherit">
-            Access the high yield
+            The most capital-efficient
             <br />
-            strategies from DeFi funds
+            way to earn DeFi yield
           </Typography>
         </Stack>
         <Stack gap={2} mt={2}>
           <Typography variant="body1" component="h6" fontWeight="600">
-            Deposit, earn from risk-adjusted strategies and maximize your yield
-            by using your tokenized deposit position across DeFi.
+            Upshift, built on prime brokerage August, lets retail access the
+            strategies used by institutions. Maximize your yield across DeFi.
           </Typography>
 
           <Stack direction="row" alignItems="center" gap={2}>
