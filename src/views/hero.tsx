@@ -34,7 +34,8 @@ export default function HeroView() {
         <Stack gap={2} mt={2}>
           <Typography variant="body1" component="h6" fontWeight="600">
             Upshift, built on prime brokerage August, lets retail access the
-            strategies used by institutions. Maximize your yield across DeFi.
+            high-yield strategies used by institutions. Maximize your APY for
+            USDC, HYPE and more.
           </Typography>
 
           <Stack direction="row" alignItems="center" gap={2}>
