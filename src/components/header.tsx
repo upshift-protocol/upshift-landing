@@ -15,12 +15,16 @@ import { useState } from "react";
 import { log } from "@/utils/helpers";
 import Image from "next/image";
 
-const StyledAugLink = styled(Link)`
+const StyledAugLink = styled(Box)`
   display: flex;
   font-size: 12px;
   gap: 6px;
   text-decoration: none;
   color: inherit;
+`;
+
+const StyledWrapper = styled(Box)`
+  position: relative;
 `;
 
 const NAV_ITEMS = [
@@ -92,35 +96,28 @@ export default function Header() {
               justifyContent: "space-between",
             }}
           >
-            <Link
-              href="/"
-              target="_self"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "flex",
-                position: "relative",
-              }}
-            >
-              <Logo />
-              <Box
-                sx={{
-                  position: "absolute",
-                  bottom: "-12px",
-                  right: "0px",
-                }}
-              >
-                <StyledAugLink href={LINKS.EXTERNAL.AUGUST} target="_blank">
-                  by August
-                  <Image
-                    src="/assets/logos/august-logo-blue.svg"
-                    alt="August Digital"
-                    height={16}
-                    width={16}
-                  />
-                </StyledAugLink>
-              </Box>
-            </Link>
+            <StyledWrapper>
+              <Link href="/" target="_self">
+                <Logo />
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: "-12px",
+                    right: "0px",
+                  }}
+                >
+                  <StyledAugLink>
+                    by August
+                    <Image
+                      src="/assets/logos/august-logo-blue.svg"
+                      alt="August Digital"
+                      height={16}
+                      width={16}
+                    />
+                  </StyledAugLink>
+                </Box>
+              </Link>
+            </StyledWrapper>
 
             {/* Desktop */}
             <Stack

@@ -42,9 +42,8 @@ export default function HeroView() {
               <Button
                 id="enter-app-dropdown-button"
                 variant="contained"
-                sx={{ width: "fit-content" }}
+                sx={{ width: "fit-content", fontSize: "18px" }}
                 size="large"
-                style={{ fontSize: "18px" }}
                 onClick={() =>
                   log({
                     eventType: "button-click",
@@ -56,7 +55,13 @@ export default function HeroView() {
               </Button>
             </Link>
             <Link href={LINKS.EXTERNAL.AUGUST} target="_blank">
-              About August
+              <Button
+                variant="outlined"
+                size="large"
+                sx={{ width: "fit-content", fontSize: "18px" }}
+              >
+                About August
+              </Button>
             </Link>
           </Stack>
         </Stack>
