@@ -8,11 +8,24 @@ import { LINKS, STYLE_VARS } from "@/utils/constants";
 import Logo from "./logo";
 import Link from "next/link";
 import SocialLink from "./social-link";
-import { Drawer, IconButton, Typography } from "@mui/material";
+import { Drawer, IconButton, styled, Typography } from "@mui/material";
 import Banner from "./banner";
 import { StyledLink } from "@/styles/styled";
 import { useState } from "react";
 import { log } from "@/utils/helpers";
+import Image from "next/image";
+
+const StyledAugLink = styled(Box)`
+  display: flex;
+  font-size: 12px;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+`;
+
+const StyledWrapper = styled(Box)`
+  position: relative;
+`;
 
 const NAV_ITEMS = [
   {
@@ -83,17 +96,28 @@ export default function Header() {
               justifyContent: "space-between",
             }}
           >
-            <Link
-              href="/"
-              target="_self"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                display: "flex",
-              }}
-            >
-              <Logo />
-            </Link>
+            <StyledWrapper>
+              <Link href="/" target="_self">
+                <Logo />
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: "-12px",
+                    right: "0px",
+                  }}
+                >
+                  <StyledAugLink>
+                    by August
+                    <Image
+                      src="/assets/logos/august-logo-blue.svg"
+                      alt="August Digital"
+                      height={16}
+                      width={16}
+                    />
+                  </StyledAugLink>
+                </Box>
+              </Link>
+            </StyledWrapper>
 
             {/* Desktop */}
             <Stack
