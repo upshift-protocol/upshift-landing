@@ -1,48 +1,16 @@
 import FONTS from "@/config/fonts";
 import { INVESTORS_IMGS } from "@/utils/constants";
 import { formatUsd } from "@/utils/helpers";
-import { IToken } from "@/utils/types";
-import { IPoolWithUnderlying } from "@augustdigital/sdk";
 import { Box, Grid2, Skeleton, Stack, Typography } from "@mui/material";
 import Image from "next/image";
-import { useMemo } from "react";
 
 export default function BannerView({
-  pools,
-  tokens,
+  totalSupplied,
   loading,
 }: {
-  pools?: IPoolWithUnderlying[];
-  tokens?: IToken[];
+  totalSupplied?: number | null;
   loading?: boolean;
 }) {
-  const totalSupplied = useMemo(() => {
-    if (!pools?.length) return "0.0";
-    let total = 0;
-    pools?.forEach(({ totalAssets, underlying, ...pool }) => {
-      const foundToken = tokens?.find((t) => t.address === underlying.address);
-      if (foundToken) {
-        // add actual tvl
-        total +=
-          Number(totalAssets?.normalized || 0) * (foundToken?.price || 0);
-        // add collateral values from Upshift USDC and Upshift cbBTC
-        if (
-          (pool?.name === "Upshift USDC" || pool?.name === "Upshift BTC") &&
-          pool?.loans?.length
-        ) {
-          pool?.loans?.forEach((loan) => {
-            // if (loan?.idleCapital) {
-            total +=
-              Number(loan?.principal?.normalized || 0) *
-              (foundToken?.price || 0);
-            // }
-          });
-        }
-      }
-    });
-    return String(total);
-  }, [JSON.stringify(pools), tokens?.length]);
-
   return (
     <Stack
       direction={{ xs: "column", lg: "row" }}
@@ -64,7 +32,7 @@ export default function BannerView({
           >
             Total Deposited
           </Typography>
-          {loading ? (
+          {loading || !totalSupplied ? (
             <Skeleton variant="text" height={"40px"} width="176px" />
           ) : (
             <Typography variant="h5">{formatUsd(totalSupplied)}</Typography>

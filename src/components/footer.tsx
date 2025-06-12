@@ -7,25 +7,26 @@ import Stack from "@mui/material/Stack";
 import { LINKS, STYLE_VARS } from "@/utils/constants";
 import BannerView from "@/views/banner";
 import augustSdk from "@/config/august-sdk";
-import { IToken } from "@/utils/types";
 import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
-import { IPoolWithUnderlying } from "@augustdigital/sdk";
+import { IAddress, IWSTokenEntry, OLD_LENDING_POOLS } from "@augustdigital/sdk";
 import { StyledLink } from "@/styles/styled";
 
+export const arrayAllEqualTrue = (arr: boolean[]) =>
+  arr?.every((val) => val === true);
+
 export default function Footer() {
-  const [pools, setPools] = useState<IPoolWithUnderlying[]>([]);
-  const [tokens, setTokens] = useState<IToken[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [totalSupplied, setTotalSupplied] = useState<number | null>(null);
 
   useEffect(() => {
     (async () => {
-      const poolsData = await augustSdk.pools.getPools({
-        loans: true,
-        allocations: true,
+      const allPools = await augustSdk.vaults.getVaults({
+        loans: false,
+        allocations: false,
       });
-      const tokensData: IToken[] = await Promise.all(
-        poolsData?.map(async (p) => {
+      const tokens: IWSTokenEntry[] = await Promise.all(
+        allPools?.map(async (p) => {
           const price = await augustSdk.getPrice(
             p.underlying?.symbol?.toLowerCase(),
           );
@@ -35,29 +36,53 @@ export default function Footer() {
           };
         }),
       );
-      setPools(poolsData);
-      setTokens(tokensData);
+      const allLoans = await Promise.all(
+        OLD_LENDING_POOLS.filter(
+          (old) => old !== "0xe1B4d34E8754600962Cd944B535180Bd758E6c2e",
+        ).map((l) =>
+          augustSdk.vaults.getVaultLoans({
+            vault: l as IAddress,
+            chainId: 1,
+          }),
+        ),
+      );
+      if (!allPools?.length) return "0.0";
+      let total = 0;
+      allPools?.forEach((pool) => {
+        const foundToken = tokens?.find(
+          (t) => t.address === pool?.underlying.address,
+        );
+        if (foundToken) {
+          // add actual tvl
+          total +=
+            Number(pool?.totalAssets?.normalized || 0) *
+            (foundToken?.price || 0);
+          // add collateral values from Upshift USDC and Upshift cbBTC
+
+          // if (arrayAllEqualTrue(allLoans.map((l) => l.isFetched))) {
+          allLoans?.forEach((loans) => {
+            loans?.forEach((loan) => {
+              if (loan.isIdleCapital) {
+                const foundLoanToken = tokens?.find(
+                  (t) => t.address === loan?.principalToken.address,
+                );
+                total +=
+                  (loan.principalAmount || 0) * (foundLoanToken?.price || 0);
+              }
+            });
+          });
+          // }
+        }
+      });
+      setTotalSupplied(total);
       setIsLoading(false);
     })().catch(console.error);
   }, []);
 
-  // const pools = await augustSdk.pools.getPools();
-  // const tokens: IToken[] = await Promise.all(
-  //   pools?.map(async (p) => {
-  //     const price = await augustSdk.getPrice(
-  //       p.underlying?.symbol?.toLowerCase(),
-  //     );
-  //     return {
-  //       ...p.underlying,
-  //       price,
-  //     };
-  //   }),
-  // );
-
   return (
     <footer>
       <Container maxWidth="xl" sx={{ marginBottom: 2 }}>
-        <BannerView pools={pools} tokens={tokens} loading={isLoading} />
+        <BannerView totalSupplied={totalSupplied} loading={isLoading} />
       </Container>
 
       <Stack
