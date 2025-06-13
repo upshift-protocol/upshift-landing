@@ -38,7 +38,7 @@ export default function Footer() {
       );
       const allLoans = await Promise.all(
         OLD_LENDING_POOLS.filter(
-          (old) => old !== "0xe1B4d34E8754600962Cd944B535180Bd758E6c2e",
+          (old) => old !== "0xe1B4d34E8754600962Cd944B535180Bd758E6c2e", // Exclude Kelp Gain
         ).map((l) =>
           augustSdk.vaults.getVaultLoans({
             vault: l as IAddress,
@@ -57,22 +57,18 @@ export default function Footer() {
           total +=
             Number(pool?.totalAssets?.normalized || 0) *
             (foundToken?.price || 0);
-          // add collateral values from Upshift USDC and Upshift cbBTC
-
-          // if (arrayAllEqualTrue(allLoans.map((l) => l.isFetched))) {
-          allLoans?.forEach((loans) => {
-            loans?.forEach((loan) => {
-              if (loan.isIdleCapital) {
-                const foundLoanToken = tokens?.find(
-                  (t) => t.address === loan?.principalToken.address,
-                );
-                total +=
-                  (loan.principalAmount || 0) * (foundLoanToken?.price || 0);
-              }
-            });
-          });
-          // }
         }
+      });
+      // add collateral values from Upshift USDC and Upshift cbBTC
+      allLoans?.forEach((loans) => {
+        loans?.forEach((loan) => {
+          if (loan.isIdleCapital) {
+            const foundLoanToken = tokens?.find(
+              (t) => t.address === loan?.principalToken.address,
+            );
+            total += (loan.principalAmount || 0) * (foundLoanToken?.price || 0);
+          }
+        });
       });
       setTotalSupplied(total);
       setIsLoading(false);
