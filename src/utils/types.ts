@@ -7,7 +7,14 @@ export type IChildren = {
 
 export type ITheme = "light" | "dark";
 
-export type ISocials = "discord" | "facebook" | "x" | "instagram" | "telegram";
+export type ISocials =
+  | "discord"
+  | "facebook"
+  | "x"
+  | "instagram"
+  | "telegram"
+  | "youtube"
+  | "linkedin";
 
 export type IToken = {
   price: number;
