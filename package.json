@@ -13,7 +13,7 @@
     "postinstall": "husky install"
   },
   "dependencies": {
-    "@augustdigital/sdk": "^3.2.0",
+    "@augustdigital/sdk": "4.0.9-alpha",
     "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
