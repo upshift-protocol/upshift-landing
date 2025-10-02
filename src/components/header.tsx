@@ -143,10 +143,18 @@ export default function Header() {
                   <Typography textTransform={"uppercase"}>{n.text}</Typography>
                 </StyledLink>
               ))}
-
-              <SocialLink type="telegram" />
-              <SocialLink type="discord" />
-              <SocialLink type="x" />
+              <Stack
+                direction="row"
+                alignItems="center"
+                gap={{ xs: 1.25, lg: 1.75 }}
+                display={{ xs: "none", sm: "flex" }}
+              >
+                <SocialLink type="telegram" />
+                <SocialLink type="discord" />
+                <SocialLink type="x" />
+                <SocialLink type="youtube" />
+                <SocialLink type="linkedin" />
+              </Stack>
             </Stack>
 
             {/* Mobile */}

@@ -35,6 +35,22 @@ function formatSocialLink(type?: ISocials) {
         width: 24,
         padding: "p-[3px]",
       };
+    case "linkedin":
+      return {
+        img: "LINKEDIN",
+        link: LINKS.EXTERNAL.LINKEDIN,
+        height: 19,
+        width: 19,
+        padding: "p-[7px]",
+      };
+    case "youtube":
+      return {
+        img: "YOUTUBE",
+        link: LINKS.EXTERNAL.YOUTUBE,
+        height: 22,
+        width: 22,
+        padding: "p-[5px]",
+      };
     default:
       return {
         img: "X",
