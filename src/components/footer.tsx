@@ -9,7 +9,7 @@ import BannerView from "@/views/banner";
 import augustSdk from "@/config/august-sdk";
 import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
-import { IAddress, IWSTokenEntry, OLD_LENDING_POOLS } from "@augustdigital/sdk";
+import { IWSTokenEntry } from "@augustdigital/sdk";
 import { StyledLink } from "@/styles/styled";
 
 export const arrayAllEqualTrue = (arr: boolean[]) =>
@@ -21,36 +21,26 @@ export default function Footer() {
 
   useEffect(() => {
     (async () => {
-      const allPools = await augustSdk.vaults.getVaults({
-        loans: false,
+      const allPools = await augustSdk.getVaults({
+        loans: true,
         allocations: false,
       });
       const tokens: IWSTokenEntry[] = await Promise.all(
         allPools?.map(async (p) => {
           const price = await augustSdk.getPrice(
-            p.underlying?.symbol?.toLowerCase(),
+            p.depositAssets?.[0]?.symbol?.toLowerCase(),
           );
           return {
-            ...p.underlying,
+            ...p.depositAssets?.[0],
             price,
           };
         }),
-      );
-      const allLoans = await Promise.all(
-        OLD_LENDING_POOLS.filter(
-          (old) => old !== "0xe1B4d34E8754600962Cd944B535180Bd758E6c2e", // Exclude Kelp Gain
-        ).map((l) =>
-          augustSdk.vaults.getVaultLoans({
-            vault: l as IAddress,
-            chainId: 1,
-          }),
-        ),
       );
       if (!allPools?.length) return "0.0";
       let total = 0;
       allPools?.forEach((pool) => {
         const foundToken = tokens?.find(
-          (t) => t.address === pool?.underlying.address,
+          (t) => t.address === pool?.depositAssets?.[0]?.address,
         );
         if (foundToken) {
           // add actual tvl
@@ -58,17 +48,6 @@ export default function Footer() {
             Number(pool?.totalAssets?.normalized || 0) *
             (foundToken?.price || 0);
         }
-      });
-      // add collateral values from Upshift USDC and Upshift cbBTC
-      allLoans?.forEach((loans) => {
-        loans?.forEach((loan) => {
-          if (loan.isIdleCapital) {
-            const foundLoanToken = tokens?.find(
-              (t) => t.address === loan?.principalToken.address,
-            );
-            total += (loan.principalAmount || 0) * (foundLoanToken?.price || 0);
-          }
-        });
       });
       setTotalSupplied(total);
       setIsLoading(false);
