@@ -10,10 +10,11 @@
     "clean": "rimraf .next .swc out",
     "format": "next lint --fix && prettier '**/*.{json,yaml,tsx,ts}' --write --ignore-path .gitignore",
     "check-types": "tsc --noEmit --pretty",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "update:sdk": "pnpm i @augustdigital/sdk@latest"
   },
   "dependencies": {
-    "@augustdigital/sdk": "4.0.9-alpha",
+    "@augustdigital/sdk": "4.0.6-beta",
     "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
