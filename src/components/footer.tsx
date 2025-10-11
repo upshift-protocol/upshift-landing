@@ -11,6 +11,7 @@ import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { IWSTokenEntry } from "@augustdigital/sdk";
 import { StyledLink } from "@/styles/styled";
+import { fetchEmberTVL } from "@/utils/ember-tvl";
 
 export const arrayAllEqualTrue = (arr: boolean[]) =>
   arr?.every((val) => val === true);
@@ -49,7 +50,11 @@ export default function Footer() {
             (foundToken?.price || 0);
         }
       });
-      setTotalSupplied(total);
+      const emberTVL = await fetchEmberTVL();
+      console.log("emberTVL", emberTVL);
+      console.log("total", total);
+      console.log("total + emberTVL", total + emberTVL);
+      setTotalSupplied(total + emberTVL);
       setIsLoading(false);
     })().catch(console.error);
   }, []);
