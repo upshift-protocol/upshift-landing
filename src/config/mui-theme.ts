@@ -51,7 +51,8 @@ const baseTheme: ThemeOptions = {
       fontSize: 18,
     },
     button: {
-      fontFamily: FONTS.dinCondensed.style.fontFamily,
+      fontFamily: FONTS.visiaPro.style.fontFamily,
+      fontWeight: HEADER_FONT_WEIGHT,
       textTransform: "uppercase",
       fontSize: 17,
       lineHeight: 1.475,

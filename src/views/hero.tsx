@@ -20,8 +20,8 @@ export default function HeroView() {
             color="primary"
             variant="h6"
             component="h2"
-            style={FONTS.dinCondensed.style}
-            fontWeight="400"
+            style={FONTS.visiaPro.style}
+            fontWeight="900"
           >
             Democratizing institutional yield
           </Typography>
