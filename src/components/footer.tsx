@@ -51,9 +51,6 @@ export default function Footer() {
         }
       });
       const emberTVL = await fetchEmberTVL();
-      console.log("emberTVL", emberTVL);
-      console.log("total", total);
-      console.log("total + emberTVL", total + emberTVL);
       setTotalSupplied(total + emberTVL);
       setIsLoading(false);
     })().catch(console.error);
