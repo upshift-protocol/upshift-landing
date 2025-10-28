@@ -26,8 +26,8 @@ export default function BannerView({
           <Typography
             textTransform={"uppercase"}
             color="primary"
-            style={FONTS.dinCondensed.style}
-            fontWeight="400"
+            style={FONTS.visiaPro.style}
+            fontWeight="900"
             fontSize="16px"
           >
             Total Deposited
@@ -45,8 +45,8 @@ export default function BannerView({
           <Typography
             textTransform={"uppercase"}
             color="primary"
-            style={FONTS.dinCondensed.style}
-            fontWeight="400"
+            style={FONTS.visiaPro.style}
+            fontWeight="900"
             fontSize="16px"
           >
             Backed By
