@@ -6,55 +6,12 @@ import buildMetadata from "@/config/metadata";
 import Stack from "@mui/material/Stack";
 import { LINKS, STYLE_VARS } from "@/utils/constants";
 import BannerView from "@/views/banner";
-import augustSdk from "@/config/august-sdk";
 import { Container } from "@mui/material";
-import { useEffect, useState } from "react";
-import { IWSTokenEntry } from "@augustdigital/sdk";
 import { StyledLink } from "@/styles/styled";
-import { fetchEmberTVL } from "@/utils/ember-tvl";
-
-export const arrayAllEqualTrue = (arr: boolean[]) =>
-  arr?.every((val) => val === true);
+import { useTVL } from "@/hooks/use-tvl";
 
 export default function Footer() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [totalSupplied, setTotalSupplied] = useState<number | null>(null);
-
-  useEffect(() => {
-    (async () => {
-      const allPools = await augustSdk.getVaults({
-        loans: true,
-        allocations: false,
-      });
-      const tokens: IWSTokenEntry[] = await Promise.all(
-        allPools?.map(async (p) => {
-          const price = await augustSdk.getPrice(
-            p.depositAssets?.[0]?.symbol?.toLowerCase(),
-          );
-          return {
-            ...p.depositAssets?.[0],
-            price,
-          };
-        }),
-      );
-      if (!allPools?.length) return "0.0";
-      let total = 0;
-      allPools?.forEach((pool) => {
-        const foundToken = tokens?.find(
-          (t) => t.address === pool?.depositAssets?.[0]?.address,
-        );
-        if (foundToken) {
-          // add actual tvl
-          total +=
-            Number(pool?.totalAssets?.normalized || 0) *
-            (foundToken?.price || 0);
-        }
-      });
-      const emberTVL = await fetchEmberTVL();
-      setTotalSupplied(total + emberTVL);
-      setIsLoading(false);
-    })().catch(console.error);
-  }, []);
+  const { totalSupplied, isLoading } = useTVL();
 
   return (
     <footer>

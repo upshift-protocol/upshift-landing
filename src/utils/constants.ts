@@ -6,6 +6,8 @@ export const NETWORK =
   "mainnet";
 export const DEVELOPMENT_MODE = process.env.NEXT_PUBLIC_DEV ? 1 : 0;
 
+export const INCLUDE_IDLE_CAPITAL_IN_TVL = false;
+
 // ui
 export const STYLE_VARS = {
   widthWide: "120rem",
