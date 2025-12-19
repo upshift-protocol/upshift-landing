@@ -9,9 +9,7 @@ import BannerView from "@/views/banner";
 import augustSdk from "@/config/august-sdk";
 import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
-import { IWSTokenEntry } from "@augustdigital/sdk";
 import { StyledLink } from "@/styles/styled";
-import { fetchEmberTVL } from "@/utils/ember-tvl";
 
 export const arrayAllEqualTrue = (arr: boolean[]) =>
   arr?.every((val) => val === true);
@@ -22,38 +20,20 @@ export default function Footer() {
 
   useEffect(() => {
     (async () => {
-      const allPools = await augustSdk.getVaults({
-        loans: true,
-        allocations: false,
-      });
-      const tokens: IWSTokenEntry[] = await Promise.all(
-        allPools?.map(async (p) => {
-          const price = await augustSdk.getPrice(
-            p.depositAssets?.[0]?.symbol?.toLowerCase(),
-          );
-          return {
-            ...p.depositAssets?.[0],
-            price,
-          };
-        }),
-      );
-      if (!allPools?.length) return "0.0";
-      let total = 0;
-      allPools?.forEach((pool) => {
-        const foundToken = tokens?.find(
-          (t) => t.address === pool?.depositAssets?.[0]?.address,
-        );
-        if (foundToken) {
-          // add actual tvl
-          total +=
-            Number(pool?.totalAssets?.normalized || 0) *
-            (foundToken?.price || 0);
-        }
-      });
-      const emberTVL = await fetchEmberTVL();
-      setTotalSupplied(total + emberTVL);
-      setIsLoading(false);
-    })().catch(console.error);
+      try {
+        const totalDepositedFromVaults = await augustSdk.getTotalDeposited({
+          loadSubaccounts: false,
+          loadSnapshots: false,
+        });
+
+        setTotalSupplied(totalDepositedFromVaults);
+      } catch (error) {
+        console.error("Error fetching total deposited:", error);
+        setTotalSupplied(null);
+      } finally {
+        setIsLoading(false);
+      }
+    })();
   }, []);
 
   return (
