@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/help-center/:path*",
+      "destination": "https://custom.intercom.help/help-center/:path*"
+    }
+  ]
+}
