@@ -10,6 +10,7 @@ import augustSdk from "@/config/august-sdk";
 import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { StyledLink } from "@/styles/styled";
+import { fetchIdleCapitalTvl } from "@/utils/idle-capital-tvl";
 
 export const arrayAllEqualTrue = (arr: boolean[]) =>
   arr?.every((val) => val === true);
@@ -21,12 +22,15 @@ export default function Footer() {
   useEffect(() => {
     (async () => {
       try {
-        const totalDepositedFromVaults = await augustSdk.getTotalDeposited({
-          loadSubaccounts: false,
-          loadSnapshots: false,
-        });
+        const [totalDepositedFromVaults, idleCapitalTvl] = await Promise.all([
+          augustSdk.getTotalDeposited({
+            loadSubaccounts: false,
+            loadSnapshots: false,
+          }),
+          fetchIdleCapitalTvl(),
+        ]);
 
-        setTotalSupplied(totalDepositedFromVaults);
+        setTotalSupplied(totalDepositedFromVaults + idleCapitalTvl);
       } catch (error) {
         console.error("Error fetching total deposited:", error);
         setTotalSupplied(null);
