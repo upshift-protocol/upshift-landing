@@ -17,7 +17,7 @@
     "reset": "rm -rf node_modules pnpm-lock.yaml out .next && pnpm i"
   },
   "dependencies": {
-    "@augustdigital/sdk": "4.15.0",
+    "@augustdigital/sdk": "npm:@augustdigitalcanary/sdk@5.1.1-canary.20260522143221.0422e614",
     "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
@@ -26,7 +26,8 @@
     "@next/third-parties": "^15.0.3",
     "next": "14.2.35",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "viem": "^2.50.4"
   },
   "devDependencies": {
     "@types/node": "^20",
