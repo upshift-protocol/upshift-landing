@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@augustdigitalcanary/sdk':
-        specifier: 5.1.1-canary.20260522143221.0422e614
-        version: 5.1.1-canary.20260522143221.0422e614(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.9.3)(utf-8-validate@6.0.6)
+      '@augustdigital/sdk':
+        specifier: npm:@augustdigitalcanary/sdk@5.1.1-canary.20260522143221.0422e614
+        version: '@augustdigitalcanary/sdk@5.1.1-canary.20260522143221.0422e614(bufferutil@4.1.0)(fastestsmallesttextencoderdecoder@1.0.22)(typescript@5.9.3)(utf-8-validate@6.0.6)'
       '@emotion/cache':
         specifier: ^11.13.1
         version: 11.14.0

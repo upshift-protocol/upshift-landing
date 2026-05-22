@@ -17,7 +17,7 @@
     "reset": "rm -rf node_modules pnpm-lock.yaml out .next && pnpm i"
   },
   "dependencies": {
-    "@augustdigitalcanary/sdk": "5.1.1-canary.20260522143221.0422e614",
+    "@augustdigital/sdk": "npm:@augustdigitalcanary/sdk@5.1.1-canary.20260522143221.0422e614",
     "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
