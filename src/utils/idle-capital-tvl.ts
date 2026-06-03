@@ -1,5 +1,3 @@
-"use client";
-
 import augustSdk from "@/config/august-sdk";
 import { OLD_LENDING_POOLS, type IVaultLoan } from "@augustdigital/sdk";
 
