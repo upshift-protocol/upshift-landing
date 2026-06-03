@@ -35,7 +35,7 @@ export const LINKS = {
     APP_PRIVATE: "https://private.upshift.finance",
     MEDIA_KIT: "https://augustdigital.notion.site/upshift-finance-media-kit",
     FAQ: "https://docs.upshift.finance/faq?utm_source=landing_page&utm_medium=website&utm_campaign=upshift_launch&utm_content=faqs",
-    BLOG: "https://x.com/upshift_fi/status/1907065929751736527",
+    BLOG: "https://www.upshift.finance/help-center/en",
     AUGUST: "https://augustdigital.io",
   },
 };

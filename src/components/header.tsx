@@ -30,7 +30,7 @@ const StyledWrapper = styled(Box)`
 const NAV_ITEMS = [
   {
     href: LINKS.EXTERNAL.BLOG,
-    text: "Vision",
+    text: "Blog",
     className: "!pb-0",
   },
   {

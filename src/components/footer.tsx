@@ -6,7 +6,6 @@ import buildMetadata from "@/config/metadata";
 import Stack from "@mui/material/Stack";
 import { LINKS, STYLE_VARS } from "@/utils/constants";
 import BannerView from "@/views/banner";
-import augustSdk from "@/config/august-sdk";
 import { Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { StyledLink } from "@/styles/styled";
@@ -18,15 +17,17 @@ export default function Footer() {
   const [isLoading, setIsLoading] = useState(true);
   const [totalSupplied, setTotalSupplied] = useState<number | null>(null);
 
+  // TVL is served from the Upstash-cached /api/tvl route (shared with
+  // upshift-app), with a live SDK fallback on cache miss.
   useEffect(() => {
     (async () => {
       try {
-        const totalDepositedFromVaults = await augustSdk.getTotalDeposited({
-          loadSubaccounts: false,
-          loadSnapshots: false,
-        });
-
-        setTotalSupplied(totalDepositedFromVaults);
+        const res = await fetch("/api/tvl");
+        if (!res.ok) throw new Error("Failed to fetch TVL");
+        const { totalSupplied: tvl } = (await res.json()) as {
+          totalSupplied: number;
+        };
+        setTotalSupplied(tvl);
       } catch (error) {
         console.error("Error fetching total deposited:", error);
         setTotalSupplied(null);
